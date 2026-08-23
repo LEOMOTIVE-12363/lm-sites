@@ -1,0 +1,26 @@
+---
+import type { HomeNavigationItem } from '../navigation';
+
+interface Props {
+  navigationItems: HomeNavigationItem[];
+}
+
+const { navigationItems } = Astro.props;
+---
+
+<ul>
+  {
+    navigationItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          target={item.opensInNewTab ? '_blank' : undefined}
+          rel={item.opensInNewTab ? 'noopener noreferrer' : undefined}
+          data-section-link={item.opensInNewTab ? undefined : ''}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>

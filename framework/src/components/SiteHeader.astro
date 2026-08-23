@@ -1,5 +1,6 @@
 ---
 import type { HomeNavigationItem } from '../navigation';
+import NavigationList from './NavigationList.astro';
 
 interface Props {
   logo: {
@@ -42,22 +43,7 @@ const {
     </a>
 
     <nav class="site-header__navigation" aria-label={mainNavigationLabel}>
-      <ul>
-        {
-          navigationItems.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                target={item.opensInNewTab ? '_blank' : undefined}
-                rel={item.opensInNewTab ? 'noopener noreferrer' : undefined}
-                data-section-link={item.opensInNewTab ? undefined : ''}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <NavigationList navigationItems={navigationItems} />
     </nav>
 
     <div class="site-header__utility">
@@ -88,5 +74,30 @@ const {
         </svg>
       </button>
     </div>
+
+    <button
+      class="site-header__menu-toggle"
+      type="button"
+      aria-label={mainNavigationLabel}
+      aria-controls="compact-navigation"
+      aria-expanded="false"
+      data-menu-toggle
+    >
+      <span class="site-header__menu-icon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
   </div>
+
+  <nav
+    class="site-header__compact-navigation"
+    id="compact-navigation"
+    aria-label={mainNavigationLabel}
+    data-compact-menu
+    hidden
+  >
+    <NavigationList navigationItems={navigationItems} />
+  </nav>
 </header>
