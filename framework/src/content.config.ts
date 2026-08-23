@@ -14,6 +14,19 @@ const pagesContentDirectory = pathToFileURL(resolve(contentRoot, 'pages'));
 const robotsContentDirectory = pathToFileURL(resolve(contentRoot, 'robots'));
 const newsContentDirectory = pathToFileURL(resolve(contentRoot, 'news'));
 
+const sitePageIdSchema = z.enum([
+  'about-frc',
+  'about-xplore',
+  'about-gh-frc',
+  'robots',
+  'achievements',
+  'news',
+  'sponsors',
+  'contact',
+]);
+
+const mediaFitSchema = z.enum(['cover', 'contain']);
+
 const mediaBaseShape = {
   src: z.string().startsWith('/content/'),
   alt: z.string().min(1),
@@ -24,11 +37,13 @@ const mediaBaseShape = {
 const imageMediaSchema = z.object({
   ...mediaBaseShape,
   type: z.literal('image').default('image'),
+  fit: mediaFitSchema.optional(),
 });
 
 const videoMediaSchema = z.object({
   ...mediaBaseShape,
   type: z.literal('video'),
+  fit: mediaFitSchema.optional(),
   poster: z.string().startsWith('/content/').optional(),
   captions: z.array(z.object({
     src: z.string().startsWith('/content/'),
@@ -81,6 +96,10 @@ const site = defineCollection({
       introduction: z.string().min(1),
       mediaLabel: z.string().min(1),
       media: mediaSchema.optional(),
+      action: z.object({
+        pageId: sitePageIdSchema,
+        label: z.string().min(1),
+      }).optional(),
     }),
     footer: z.object({
       title: z.string().min(1),
@@ -95,16 +114,7 @@ const page = defineCollection({
     pattern: '*.md',
   }),
   schema: z.object({
-    navigationId: z.enum([
-      'about-frc',
-      'about-xplore',
-      'about-gh-frc',
-      'robots',
-      'achievements',
-      'news',
-      'sponsors',
-      'contact',
-    ]),
+    navigationId: sitePageIdSchema,
     order: z.number().int().min(1).max(8),
     layout: z.enum([
       'editorial',

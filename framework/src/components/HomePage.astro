@@ -16,6 +16,13 @@ interface Props {
 }
 
 const { hero, pages } = Astro.props;
+const heroActionPage = hero.action
+  ? pages.find(({ id }) => id === hero.action?.pageId)
+  : undefined;
+
+if (hero.action && !heroActionPage) {
+  throw new Error(`The homepage action target ${hero.action.pageId} is missing.`);
+}
 ---
 
 <main class="home-page" id="main-content">
@@ -25,6 +32,14 @@ const { hero, pages } = Astro.props;
         <p class="page-eyebrow">{hero.eyebrow}</p>
         <h1>{hero.title}</h1>
         <p>{hero.introduction}</p>
+        {
+          hero.action && heroActionPage && (
+            <a class="text-link home-hero__action" href={heroActionPage.href} data-hero-action>
+              <span>{hero.action.label}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          )
+        }
       </div>
       <div class="home-hero__media">
         <MediaFrame

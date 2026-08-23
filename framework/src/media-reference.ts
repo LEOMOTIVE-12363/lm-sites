@@ -1,9 +1,12 @@
+export type MediaFit = 'cover' | 'contain';
+
 export interface ImageMediaReference {
   type?: 'image';
   src: string;
   alt: string;
   intrinsicWidth: number;
   intrinsicHeight: number;
+  fit?: MediaFit;
 }
 
 export interface VideoCaptionTrack {
@@ -19,6 +22,7 @@ export interface VideoMediaReference {
   alt: string;
   intrinsicWidth: number;
   intrinsicHeight: number;
+  fit?: MediaFit;
   poster?: string;
   captions?: VideoCaptionTrack[];
 }

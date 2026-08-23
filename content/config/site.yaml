@@ -32,6 +32,9 @@ site:
     mediaLabel: 首页图片或视频预留区
     introPlaceholder: 首页介绍文字预留区
     mediaPlaceholder: 首页图片或视频预留区
+    action:
+      pageId: about-gh-frc
+      label: 了解示例队伍
   sections:
     about-frc:
       heading: 关于 FRC

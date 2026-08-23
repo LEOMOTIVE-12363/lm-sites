@@ -13,7 +13,7 @@ const { media, placeholderLabel, eager = false } = Astro.props;
 
 {
   media ? (
-    <figure class="media-frame">
+    <figure class="media-frame" data-fit={media.fit ?? 'cover'}>
       {isVideoMedia(media) ? (
         <video
           src={media.src}

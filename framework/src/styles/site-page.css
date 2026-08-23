@@ -43,6 +43,11 @@
   object-fit: cover;
 }
 
+.media-frame[data-fit='contain'] img,
+.media-frame[data-fit='contain'] video {
+  object-fit: contain;
+}
+
 .text-link {
   display: inline-flex;
   gap: 10px;

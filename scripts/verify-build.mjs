@@ -106,6 +106,17 @@ for (const relativePath of expectedHtmlFiles.filter((path) => path !== 'about-fr
 const homepageHtml = await readFile(join(distRoot, 'index.html'), 'utf8');
 let previousRoutePosition = -1;
 
+assert.equal(
+  countMatches(homepageHtml, /data-hero-action/gu),
+  1,
+  'Homepage must render exactly one dedicated hero action.',
+);
+assert.match(
+  homepageHtml,
+  /href="\/team\/"[^>]*data-hero-action/gu,
+  'Homepage hero action must lead to the About GHFRC page.',
+);
+
 for (const route of canonicalRoutes) {
   const routePosition = homepageHtml.indexOf(`href="${route}"`);
   assert.ok(routePosition > previousRoutePosition, `Homepage route order is incorrect at ${route}.`);
