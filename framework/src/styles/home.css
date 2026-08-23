@@ -63,7 +63,7 @@
 .home-hero__media .media-frame[data-fit='contain'] {
   width: min(100%, 520px);
   min-height: 0;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: var(--media-aspect-ratio);
 }
 
 .home-showcase {

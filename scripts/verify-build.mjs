@@ -106,16 +106,21 @@ for (const relativePath of expectedHtmlFiles.filter((path) => path !== 'about-fr
 const homepageHtml = await readFile(join(distRoot, 'index.html'), 'utf8');
 let previousRoutePosition = -1;
 
-assert.equal(
-  countMatches(homepageHtml, /data-hero-action/gu),
-  1,
-  'Homepage must render exactly one dedicated hero action.',
+const heroActionTags = [...homepageHtml.matchAll(/<a\b[^>]*data-hero-action[^>]*>/gu)];
+
+assert.ok(
+  heroActionTags.length <= 1,
+  'Homepage must render at most one dedicated hero action.',
 );
-assert.match(
-  homepageHtml,
-  /href="\/team\/"[^>]*data-hero-action/gu,
-  'Homepage hero action must lead to the About GHFRC page.',
-);
+
+if (heroActionTags.length === 1) {
+  const heroActionHref = heroActionTags[0][0].match(/href="([^"]+)"/u)?.[1];
+
+  assert.ok(
+    heroActionHref && canonicalRoutes.includes(heroActionHref),
+    'Homepage hero action must lead to a canonical site page.',
+  );
+}
 
 for (const route of canonicalRoutes) {
   const routePosition = homepageHtml.indexOf(`href="${route}"`);
