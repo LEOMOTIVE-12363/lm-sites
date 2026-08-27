@@ -38,10 +38,7 @@ const site = defineCollection({
     }),
     navigation: z.object({
       'about-frc': z.string().min(1),
-      'about-xplore': z.string().min(1),
       'about-gh-frc': z.string().min(1),
-      robots: z.string().min(1),
-      achievements: z.string().min(1),
       news: z.string().min(1),
       sponsors: z.string().min(1),
       contact: z.string().min(1),
@@ -53,10 +50,7 @@ const site = defineCollection({
     }),
     sections: z.object({
       'about-frc': sectionSchema,
-      'about-xplore': sectionSchema,
       'about-gh-frc': sectionSchema,
-      robots: sectionSchema,
-      achievements: sectionSchema,
       news: sectionSchema,
       sponsors: sectionSchema,
       contact: sectionSchema,

@@ -10,12 +10,10 @@ describe('home navigation', () => {
     const items = createHomeNavigationItems(
       [
         { id: 'about-frc' },
-        { id: 'about-xplore' },
         { id: 'about-gh-frc' },
       ] as const,
       {
         'about-frc': '关于 FRC',
-        'about-xplore': '关于 X.PLORE',
         'about-gh-frc': '关于 GHFRC',
       },
     );
@@ -25,11 +23,6 @@ describe('home navigation', () => {
         href: FIRST_ROBOTICS_COMPETITION_URL,
         label: '关于 FRC',
         opensInNewTab: true,
-      },
-      {
-        href: '#about-xplore',
-        label: '关于 X.PLORE',
-        opensInNewTab: false,
       },
       {
         href: '#about-gh-frc',

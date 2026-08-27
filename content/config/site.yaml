@@ -14,10 +14,7 @@ site:
     switchToLightMode: 切换至浅色模式
   navigation:
     about-frc: 关于 FRC
-    about-xplore: 关于 X.PLORE
     about-gh-frc: 关于 GHFRC
-    robots: 机器人
-    achievements: 赛事成果
     news: 新闻动态
     sponsors: 赞助商
     contact: 联系我们
@@ -31,11 +28,6 @@ site:
       bodyPlaceholder: FRC 介绍文字预留区
       mediaPlaceholder: FRC 图片或视频预留区
       itemPlaceholders: []
-    about-xplore:
-      heading: 关于 X.PLORE
-      bodyPlaceholder: X.PLORE 介绍文字预留区
-      mediaPlaceholder: X.PLORE 图片或视频预留区
-      itemPlaceholders: []
     about-gh-frc:
       heading: 关于 GHFRC
       bodyPlaceholder: GHFRC 队伍介绍文字预留区
@@ -44,20 +36,6 @@ site:
         - 队伍人数预留区
         - 队伍公开概况预留区
         - 队伍相关信息预留区
-    robots:
-      heading: 机器人
-      bodyPlaceholder: 机器人介绍文字预留区
-      mediaPlaceholder: 机器人图片或视频预留区
-      itemPlaceholders:
-        - 机器人赛季信息预留区
-        - 机器人技术简介预留区
-    achievements:
-      heading: 赛事成果
-      bodyPlaceholder: 赛事成果介绍文字预留区
-      itemPlaceholders:
-        - 参赛记录预留区
-        - 奖项与排名预留区
-        - 比赛回顾预留区
     news:
       heading: 新闻动态
       bodyPlaceholder: 新闻动态介绍文字预留区
