@@ -157,8 +157,6 @@
 }
 
 .site-page__body,
-.poster-stack,
-.season-showcase,
 .news-index,
 .contact-panel,
 .placeholder-page,
@@ -257,39 +255,6 @@
   vertical-align: top;
 }
 
-.poster-stack,
-.season-showcase {
-  display: grid;
-  gap: 32px;
-}
-
-.poster-card,
-.season-poster {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
-  min-height: min(760px, 82vh);
-  border: 1px solid var(--color-border-strong);
-  background: var(--color-surface);
-}
-
-.poster-card__media .media-frame,
-.poster-card__media .placeholder,
-.season-poster > .media-frame,
-.season-poster > .placeholder {
-  height: 100%;
-  min-height: 520px;
-  border: 0;
-  border-right: 1px solid var(--color-border-strong);
-}
-
-.poster-card__copy,
-.season-poster__copy {
-  align-self: end;
-  padding: clamp(36px, 5vw, 72px);
-}
-
-.poster-card__copy h2,
-.season-poster__copy h2,
 .empty-state h2 {
   margin: 0;
   font-size: clamp(46px, 5.5vw, 78px);
@@ -298,37 +263,12 @@
   line-height: 0.98;
 }
 
-.poster-card__copy > p:not(.page-eyebrow),
-.season-poster__copy > p:not(.page-eyebrow),
 .empty-state > p:last-child {
   max-width: 34ch;
   margin: 28px 0 0;
   color: var(--color-muted);
   font-size: 17px;
   line-height: 1.7;
-}
-
-.season-poster {
-  grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
-}
-
-.season-poster > .media-frame,
-.season-poster > .placeholder {
-  order: 2;
-  border-right: 0;
-  border-left: 1px solid var(--color-border-strong);
-}
-
-.season-poster__copy ul {
-  margin: 32px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.season-poster__copy li {
-  padding: 14px 0;
-  border-top: 1px solid var(--color-border);
-  font-size: 14px;
 }
 
 .news-index__grid {
@@ -548,23 +488,6 @@
     margin-left: 0;
   }
 
-  .poster-card,
-  .season-poster {
-    grid-template-columns: minmax(0, 1fr);
-    min-height: 0;
-  }
-
-  .poster-card__media .media-frame,
-  .poster-card__media .placeholder,
-  .season-poster > .media-frame,
-  .season-poster > .placeholder {
-    order: initial;
-    min-height: 520px;
-    border-right: 0;
-    border-bottom: 1px solid var(--color-border-strong);
-    border-left: 0;
-  }
-
   .partner-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -608,8 +531,6 @@
   }
 
   .site-page__body,
-  .poster-stack,
-  .season-showcase,
   .news-index,
   .contact-panel,
   .placeholder-page,
@@ -626,18 +547,6 @@
   .site-page__prose p,
   .site-page__prose li {
     font-size: 16px;
-  }
-
-  .poster-card__media .media-frame,
-  .poster-card__media .placeholder,
-  .season-poster > .media-frame,
-  .season-poster > .placeholder {
-    min-height: 280px;
-  }
-
-  .poster-card__copy,
-  .season-poster__copy {
-    padding: 32px 24px 40px;
   }
 
   .news-index__grid,

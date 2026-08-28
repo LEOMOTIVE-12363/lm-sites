@@ -185,22 +185,20 @@ export async function discoverContentSourceFiles(contentRoot) {
     const pagesDirectory = join(contentRoot, 'pages', locale);
     const pageFiles = await discoverMarkdownFiles(pagesDirectory);
 
-    if (pageFiles.length !== 8) {
+    if (pageFiles.length !== 5) {
       throw new Error(
-        `Content preparation failed: expected 8 ${locale} Markdown page files in ${pagesDirectory}, found ${pageFiles.length}.`,
+        `Content preparation failed: expected 5 ${locale} Markdown page files in ${pagesDirectory}, found ${pageFiles.length}.`,
       );
     }
 
     return pageFiles;
   }));
 
-  const robotFiles = await discoverMarkdownFiles(join(contentRoot, 'robots'), { optional: true });
   const newsFiles = await discoverMarkdownFiles(join(contentRoot, 'news'), { optional: true });
 
   return [
     ...localizedSiteConfigs,
     ...localizedPageFiles.flat(),
-    ...robotFiles,
     ...newsFiles,
   ].sort();
 }

@@ -2,13 +2,10 @@ import type { Locale } from './i18n/locales';
 
 export const sitePagePlan = [
   { id: 'about-frc', contentId: 'frc', order: 1 },
-  { id: 'about-xplore', contentId: 'xplore', order: 2 },
-  { id: 'about-gh-frc', contentId: 'team', order: 3 },
-  { id: 'robots', contentId: 'robots', order: 4 },
-  { id: 'achievements', contentId: 'achievements', order: 5 },
-  { id: 'news', contentId: 'news', order: 6 },
-  { id: 'sponsors', contentId: 'sponsors', order: 7 },
-  { id: 'contact', contentId: 'contact', order: 8 },
+  { id: 'about-gh-frc', contentId: 'team', order: 2 },
+  { id: 'news', contentId: 'news', order: 3 },
+  { id: 'sponsors', contentId: 'sponsors', order: 4 },
+  { id: 'contact', contentId: 'contact', order: 5 },
 ] as const;
 
 export type SitePageId = (typeof sitePagePlan)[number]['id'];

@@ -18,13 +18,13 @@ test('extracts media references from YAML and Markdown text', () => {
 logo:
   src: /content/images/team-logo.png
 
-![Robot poster](/content/images/robots/2026-poster.webp)
+![Team poster](/content/images/team/overview.webp)
 <video src="/content/videos/reveal.mp4"></video>
 `;
 
   assert.deepEqual(extractMediaReferences(source), [
     '/content/images/team-logo.png',
-    '/content/images/robots/2026-poster.webp',
+    '/content/images/team/overview.webp',
     '/content/videos/reveal.mp4',
   ]);
 });
@@ -101,10 +101,7 @@ test('discovers configured Markdown source trees recursively', async (t) => {
 
   const pageNames = [
     'frc',
-    'xplore',
     'team',
-    'robots',
-    'achievements',
     'news',
     'sponsors',
     'contact',
@@ -114,7 +111,6 @@ test('discovers configured Markdown source trees recursively', async (t) => {
     'config/locales/en/site.yaml',
     ...pageNames.map((pageName) => `pages/zh-CN/${pageName}.md`),
     ...pageNames.map((pageName) => `pages/en/${pageName}.md`),
-    'robots/seasons/2026.md',
     'news/2026/kickoff.md',
   ];
 
@@ -140,7 +136,7 @@ test('discovers configured Markdown source trees recursively', async (t) => {
   );
 });
 
-test('requires exactly eight page Markdown files for every enabled locale', async (t) => {
+test('requires exactly five page Markdown files for every enabled locale', async (t) => {
   const contentRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-pages-'));
   t.after(() => rm(contentRoot, { force: true, recursive: true }));
 
@@ -159,7 +155,7 @@ test('requires exactly eight page Markdown files for every enabled locale', asyn
     'utf8',
   );
 
-  for (let pageNumber = 1; pageNumber <= 7; pageNumber += 1) {
+  for (let pageNumber = 1; pageNumber <= 4; pageNumber += 1) {
     await writeFile(
       join(contentRoot, 'pages', 'zh-CN', `page-${pageNumber}.md`),
       `page ${pageNumber}\n`,
@@ -167,7 +163,7 @@ test('requires exactly eight page Markdown files for every enabled locale', asyn
     );
   }
 
-  for (let pageNumber = 1; pageNumber <= 8; pageNumber += 1) {
+  for (let pageNumber = 1; pageNumber <= 5; pageNumber += 1) {
     await writeFile(
       join(contentRoot, 'pages', 'en', `page-${pageNumber}.md`),
       `page ${pageNumber}\n`,
@@ -177,7 +173,7 @@ test('requires exactly eight page Markdown files for every enabled locale', asyn
 
   await assert.rejects(
     discoverContentSourceFiles(contentRoot),
-    /expected 8 zh-CN Markdown page files in .*\/pages\/zh-CN, found 7/,
+    /expected 5 zh-CN Markdown page files in .*\/pages\/zh-CN, found 4/,
   );
 });
 
@@ -206,7 +202,7 @@ test('rejects symbolic links in recursively discovered text sources', async (t) 
   await mkdir(join(contentRoot, 'config', 'locales', 'en'), { recursive: true });
   await mkdir(join(contentRoot, 'pages', 'zh-CN'), { recursive: true });
   await mkdir(join(contentRoot, 'pages', 'en'), { recursive: true });
-  await mkdir(join(contentRoot, 'robots'), { recursive: true });
+  await mkdir(join(contentRoot, 'news'), { recursive: true });
   await writeFile(
     join(contentRoot, 'config', 'locales', 'zh-CN', 'site.yaml'),
     'site: example\n',
@@ -218,7 +214,7 @@ test('rejects symbolic links in recursively discovered text sources', async (t) 
     'utf8',
   );
 
-  for (let pageNumber = 1; pageNumber <= 8; pageNumber += 1) {
+  for (let pageNumber = 1; pageNumber <= 5; pageNumber += 1) {
     await writeFile(
       join(contentRoot, 'pages', 'zh-CN', `page-${pageNumber}.md`),
       `page ${pageNumber}\n`,
@@ -231,9 +227,9 @@ test('rejects symbolic links in recursively discovered text sources', async (t) 
     );
   }
 
-  const linkedSource = join(contentRoot, 'linked-robot.md');
+  const linkedSource = join(contentRoot, 'linked-news.md');
   await writeFile(linkedSource, 'linked source\n', 'utf8');
-  await symlink(linkedSource, join(contentRoot, 'robots', '2026.md'));
+  await symlink(linkedSource, join(contentRoot, 'news', '2026.md'));
 
   await assert.rejects(
     discoverContentSourceFiles(contentRoot),

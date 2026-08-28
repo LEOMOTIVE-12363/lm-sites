@@ -75,10 +75,7 @@ export const siteSchema = z.object({
   }),
   navigation: z.object({
     'about-frc': z.string().min(1),
-    'about-xplore': z.string().min(1),
     'about-gh-frc': z.string().min(1),
-    robots: z.string().min(1),
-    achievements: z.string().min(1),
     news: z.string().min(1),
     sponsors: z.string().min(1),
     contact: z.string().min(1),
@@ -99,19 +96,14 @@ export const siteSchema = z.object({
 export const pageSchema = z.object({
   navigationId: z.enum([
     'about-frc',
-    'about-xplore',
     'about-gh-frc',
-    'robots',
-    'achievements',
     'news',
     'sponsors',
     'contact',
   ]),
-  order: z.number().int().min(1).max(8),
+  order: z.number().int().min(1).max(5),
   layout: z.enum([
     'editorial',
-    'robots',
-    'competition-results',
     'news',
     'placeholder',
     'contact',
@@ -141,14 +133,6 @@ export const pageSchema = z.object({
   })).optional(),
   emptyState: emptyStateSchema.optional(),
   detailLinkLabel: z.string().min(1).optional(),
-  seasons: z.array(z.object({
-    id: z.string().min(1),
-    season: z.string().min(1),
-    event: z.string().min(1),
-    summary: z.string().min(1),
-    awards: z.array(z.string().min(1)),
-    media: localizedMediaSchema.optional(),
-  })).optional(),
   contactMethods: z.array(z.object({
     id: z.string().min(1),
     label: z.string().min(1),
@@ -181,21 +165,6 @@ export const pageSchema = z.object({
     })).min(1),
   }).optional(),
 });
-
-export const robotSchema = z.discriminatedUnion('entryType', [
-  z.object({
-    entryType: z.literal('guide'),
-  }),
-  z.object({
-    entryType: z.literal('robot'),
-    title: z.string().min(1),
-    season: z.string().min(1),
-    summary: z.string().min(1),
-    description: z.string().min(1),
-    poster: localizedMediaSchema,
-    published: z.boolean().default(true),
-  }),
-]);
 
 export const newsSchema = z.discriminatedUnion('entryType', [
   z.object({

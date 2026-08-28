@@ -7,10 +7,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const distRoot = join(projectRoot, 'framework', 'dist');
 const pageSlugs = [
   'frc',
-  'xplore',
   'team',
-  'robots',
-  'achievements',
   'news',
   'sponsors',
   'contact',
@@ -162,14 +159,23 @@ for (const locale of ['zh-cn', 'en']) {
   const sponsorsHtml = await readFile(join(distRoot, locale, 'sponsors', 'index.html'), 'utf8');
   assert.match(sponsorsHtml, /class="empty-state"/u, 'Sponsors must retain its empty state.');
 
-  const robotsHtml = await readFile(join(distRoot, locale, 'robots', 'index.html'), 'utf8');
-  assert.match(robotsHtml, /poster-card poster-card--empty/u, 'Robots must show one generic poster when empty.');
-
   const newsHtml = await readFile(join(distRoot, locale, 'news', 'index.html'), 'utf8');
   assert.match(newsHtml, /class="empty-state"/u, 'News must retain its empty state.');
 }
 
 assert.equal(await fileExists(join(distRoot, 'zh-hant')), false, 'zh-Hant routes must not be generated.');
+for (const removedSlug of ['xplore', 'robots', 'achievements']) {
+  assert.equal(
+    await fileExists(join(distRoot, 'zh-cn', removedSlug)),
+    false,
+    `${removedSlug} must not be generated for Stable.`,
+  );
+  assert.equal(
+    await fileExists(join(distRoot, 'en', removedSlug)),
+    false,
+    `${removedSlug} must not be generated for Stable.`,
+  );
+}
 
 const outputFiles = await collectFiles(distRoot);
 for (const outputFile of outputFiles) {

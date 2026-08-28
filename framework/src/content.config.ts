@@ -8,7 +8,6 @@ import {
   localeOverlaySchema,
   newsSchema,
   pageSchema,
-  robotSchema,
   siteSchema,
 } from './content-schema';
 
@@ -47,14 +46,6 @@ const pageEn = defineCollection({
   schema: localeOverlaySchema,
 });
 
-const robot = defineCollection({
-  loader: glob({
-    base: contentUrl('robots'),
-    pattern: '*.md',
-  }),
-  schema: robotSchema,
-});
-
 const news = defineCollection({
   loader: glob({
     base: contentUrl('news'),
@@ -63,4 +54,4 @@ const news = defineCollection({
   schema: newsSchema,
 });
 
-export const collections = { news, page, pageEn, robot, site, siteEn };
+export const collections = { news, page, pageEn, site, siteEn };

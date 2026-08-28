@@ -11,14 +11,11 @@ const contentRoot = process.env.GH_FRC_CONTENT_DIR
   ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
   : join(projectRoot, 'content');
 const pageIds = [
-  'achievements',
   'contact',
   'frc',
   'news',
-  'robots',
   'sponsors',
   'team',
-  'xplore',
 ];
 
 async function readYamlEntry(filePath, entryName) {

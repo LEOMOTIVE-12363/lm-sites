@@ -185,11 +185,11 @@ describe('unlocalized route redirects', () => {
     expect(
       runLanguageRedirect({
         browserLanguages: ['zh-CN'],
-        hash: '#robots',
+        hash: '#news',
         search: '?review=1',
         storage: createLanguageStorage('en'),
       }),
-    ).toBe(`/en/?review=1&${AUTOMATIC_LANGUAGE_QUERY_KEY}=en#robots`);
+    ).toBe(`/en/?review=1&${AUTOMATIC_LANGUAGE_QUERY_KEY}=en#news`);
   });
 
   it('uses the browser locale for a legacy route and preserves its English slug', () => {
@@ -233,12 +233,12 @@ describe('unlocalized route redirects', () => {
 describe('explicit and automatic locale visits', () => {
   it('does not persist a browser-detected automatic locale and removes the internal marker', () => {
     const result = runLocaleVisit({
-      hash: '#robots',
+      hash: '#news',
       search: `?review=1&${AUTOMATIC_LANGUAGE_QUERY_KEY}=en`,
     });
 
     expect(result.storage.getItem(LANGUAGE_STORAGE_KEY)).toBeNull();
-    expect(result.cleanedUrl).toBe('/en/?review=1#robots');
+    expect(result.cleanedUrl).toBe('/en/?review=1#news');
   });
 
   it('persists a locale selected through an explicit language URL', () => {
