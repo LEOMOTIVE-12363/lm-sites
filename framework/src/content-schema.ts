@@ -65,9 +65,6 @@ export const siteSchema = z.object({
       en: z.string().min(1),
     }),
   }),
-  achievementMessages: z.object({
-    unlocked: z.string().min(1),
-  }),
   placeholderKinds: z.object({
     text: z.string().min(1),
     media: z.string().min(1),

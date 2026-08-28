@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   buildSiteNavigationItems,
+  FIRST_FRC_OFFICIAL_URL,
   localizedPageHref,
   resolveLegacySectionRoute,
   sitePagePlan,
@@ -38,7 +39,18 @@ describe('site page structure', () => {
     expect(items.filter(({ isCurrent }) => isCurrent)).toEqual([
       expect.objectContaining({ href: '/en/robots/', label: '机器人' }),
     ]);
-    expect(items.every(({ href }) => href.startsWith('/'))).toBe(true);
+    expect(items.filter(({ href }) => href.startsWith('/'))).toHaveLength(7);
+  });
+
+  it('opens About FRC on the official FIRST website instead of the local page', () => {
+    const [aboutFrc] = buildSiteNavigationItems(labels, 'about-frc', 'zh-cn');
+
+    expect(aboutFrc).toEqual({
+      href: FIRST_FRC_OFFICIAL_URL,
+      isCurrent: false,
+      label: '关于 FRC',
+      opensInNewTab: true,
+    });
   });
 
   it('builds localized page paths with stable English slugs', () => {

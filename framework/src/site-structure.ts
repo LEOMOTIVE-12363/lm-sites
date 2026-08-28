@@ -15,16 +15,25 @@ export type SitePageId = (typeof sitePagePlan)[number]['id'];
 export type SiteContentId = (typeof sitePagePlan)[number]['contentId'];
 export type SiteNavigationContext = 'home' | SitePageId;
 
+export const FIRST_FRC_OFFICIAL_URL = 'https://www.firstinspires.org/programs/frc/';
+
 export function buildSiteNavigationItems(
   labels: Record<SitePageId, string>,
   context: SiteNavigationContext,
   locale: Locale,
 ) {
-  return sitePagePlan.map(({ contentId, id }) => ({
-    href: localizedPageHref(locale, contentId),
-    label: labels[id],
-    isCurrent: context === id,
-  }));
+  return sitePagePlan.map(({ contentId, id }) => {
+    const linksToOfficialFrcSite = id === 'about-frc';
+
+    return {
+      href: linksToOfficialFrcSite
+        ? FIRST_FRC_OFFICIAL_URL
+        : localizedPageHref(locale, contentId),
+      label: labels[id],
+      isCurrent: !linksToOfficialFrcSite && context === id,
+      opensInNewTab: linksToOfficialFrcSite,
+    };
+  });
 }
 
 export function localizedPageHref(locale: Locale, contentId: SiteContentId) {

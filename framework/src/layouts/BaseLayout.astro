@@ -15,8 +15,6 @@ interface Props {
   locale: Locale;
   pagePath?: string;
   noIndex?: boolean;
-  achievementUnlockedMessage?: string;
-  achievementUnlockedLanguage?: string;
   titleLanguage?: string;
   descriptionLanguage?: string;
 }
@@ -27,8 +25,6 @@ const {
   locale,
   pagePath = '',
   noIndex = false,
-  achievementUnlockedMessage,
-  achievementUnlockedLanguage,
   titleLanguage,
   descriptionLanguage,
 } = Astro.props;
@@ -45,11 +41,7 @@ const languagePreferenceScript = createLocaleVisitScript(locale);
 ---
 
 <!doctype html>
-<html
-  lang={htmlLanguage}
-  data-achievement-unlocked-message={achievementUnlockedMessage}
-  data-achievement-unlocked-language={achievementUnlockedLanguage}
->
+<html lang={htmlLanguage}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

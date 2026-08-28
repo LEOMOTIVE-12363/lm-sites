@@ -141,11 +141,20 @@ for (const route of automaticRoutes) {
 
 for (const locale of ['zh-cn', 'en']) {
   const homepageHtml = await readFile(join(distRoot, locale, 'index.html'), 'utf8');
+  const mainContentStart = homepageHtml.indexOf('<main');
+  const mainContentEnd = homepageHtml.indexOf('</main>');
+  const homepageMainHtml = homepageHtml.slice(mainContentStart, mainContentEnd + '</main>'.length);
   let previousRoutePosition = -1;
+
+  assert.match(
+    homepageHtml,
+    /href="https:\/\/www\.firstinspires\.org\/programs\/frc\/"[^>]*target="_blank"[^>]*rel="noopener noreferrer"/u,
+    `${locale} homepage must link About FRC to the official FIRST® FRC page.`,
+  );
 
   for (const slug of pageSlugs) {
     const route = `/${locale}/${slug}/`;
-    const routePosition = homepageHtml.indexOf(`href="${route}"`);
+    const routePosition = homepageMainHtml.indexOf(`href="${route}"`);
     assert.ok(routePosition > previousRoutePosition, `${locale} homepage order is incorrect at ${route}.`);
     previousRoutePosition = routePosition;
   }
