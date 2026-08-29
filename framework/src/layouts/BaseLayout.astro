@@ -48,6 +48,7 @@ const languagePreferenceScript = createLocaleVisitScript(locale);
     <meta name="description" content={description} lang={descriptionLanguage} />
     {shouldPreventIndexing && <meta name="robots" content="noindex, follow" />}
     <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="canonical" href={canonicalUrl} />
     {
       languageAlternates.map((alternate) => (
