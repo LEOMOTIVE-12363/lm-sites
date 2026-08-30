@@ -17,8 +17,6 @@ site:
     shortOptions:
       zh-cn: 中
       en: EN
-  achievementMessages:
-    unlocked: Achievement unlocked
   placeholderKinds:
     text: Text area
     media: Image or video area
