@@ -7,7 +7,7 @@ The framework discovers the module through one optional initialization seam and 
 ## Public Interface
 
 ```ts
-import { initializeAchievementSystem } from '@gh-frc/achievements';
+import { initializeAchievementSystem } from '@leomotive/achievements';
 
 initializeAchievementSystem();
 ```
@@ -21,7 +21,7 @@ The module exports the `AchievementSoundPlayer` interface so the original synthe
 From the project root:
 
 ```bash
-npm --workspace @gh-frc/achievements test
+npm --workspace @leomotive/achievements test
 ```
 
 # 成就系统
@@ -33,7 +33,7 @@ npm --workspace @gh-frc/achievements test
 ## 公开接口
 
 ```ts
-import { initializeAchievementSystem } from '@gh-frc/achievements';
+import { initializeAchievementSystem } from '@leomotive/achievements';
 
 initializeAchievementSystem();
 ```
@@ -47,5 +47,5 @@ initializeAchievementSystem();
 在总项目目录运行：
 
 ```bash
-npm --workspace @gh-frc/achievements test
+npm --workspace @leomotive/achievements test
 ```

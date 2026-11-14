@@ -32,7 +32,7 @@ describe('localized content media schemas', () => {
     expect(
       siteSchema.shape.hero.parse({
         eyebrow: 'Team website',
-        title: 'GHFRC',
+        title: 'LEOMOTIVE',
         introduction: 'Introduction',
         mediaLabel: 'Media',
         media: {
