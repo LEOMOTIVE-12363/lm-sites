@@ -5,8 +5,8 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const contentRoot = process.env.GH_FRC_CONTENT_DIR
-  ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
+const contentRoot = process.env.LM_SITES_CONTENT_DIR
+  ? resolve(projectRoot, process.env.LM_SITES_CONTENT_DIR)
   : join(projectRoot, 'content');
 const sourceSiteConfig = join(contentRoot, 'config', 'site.yaml');
 const sourceAboutFrcConfig = join(contentRoot, 'config', 'about-frc.yaml');

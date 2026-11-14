@@ -1,6 +1,6 @@
 # Example Content
 
-This folder contains public, replaceable example content for the website template. It does not contain GHFRC's private website media.
+This folder contains public, replaceable example content for the website template. It does not contain LEOMOTIVE's private website media.
 
 - `config/site.yaml`: navigation labels, section headings, accessibility labels, and placeholder copy.
 - `config/about-frc.yaml`: structured example content for the independent About FRC page.
@@ -11,7 +11,7 @@ Replace the files in this folder with one complete content set. Do not place pas
 
 # 示例内容
 
-本文件夹保存网站模板中公开且可替换的示例内容，不包含 GHFRC 官网的私有媒体。
+本文件夹保存网站模板中公开且可替换的示例内容，不包含 LEOMOTIVE 官网的私有媒体。
 
 - `config/site.yaml`：导航文字、栏目标题、无障碍标签和占位文字。
 - `config/about-frc.yaml`：独立“关于 FRC”页面的结构化示例内容。

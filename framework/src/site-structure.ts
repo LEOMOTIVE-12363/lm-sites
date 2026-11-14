@@ -1,7 +1,7 @@
 export const siteSectionPlan = [
   { id: 'about-frc', index: '02', variant: 'split' },
   { id: 'about-xplore', index: '03', variant: 'split-reverse' },
-  { id: 'about-gh-frc', index: '04', variant: 'overview' },
+  { id: 'about-leomotive', index: '04', variant: 'overview' },
   { id: 'robots', index: '05', variant: 'feature' },
   { id: 'achievements', index: '06', variant: 'grid' },
   { id: 'news', index: '07', variant: 'news' },
