@@ -1,8 +1,8 @@
-# GHFRC Website
+# lm-sites
 
-GHFRC Website is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
+lm-sites is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
 
-The repository contains only replaceable example content. GHFRC's real website content is maintained separately in a private repository and is not part of this project.
+The repository contains only replaceable example content. LEOMOTIVE's real website content is maintained separately in a private repository and is not part of this project.
 
 ## Project Structure
 
@@ -12,7 +12,7 @@ The repository contains only replaceable example content. GHFRC's real website c
 - `engineering-logs/`: project-wide same-day goals and completed work.
 - `docs/`: implementation specifications and cross-module documentation.
 
-The complete sanitized legacy framework and skin history is connected to the `Tony` branch. The public history excludes GHFRC's real content. Use a regular merge commit when merging `Tony` into `main`; do not squash or rebase if the legacy topology must remain visible.
+The complete sanitized legacy framework and skin history is connected to the `Tony` branch. The public history excludes LEOMOTIVE's real content. Use a regular merge commit when merging `Tony` into `main`; do not squash or rebase if the legacy topology must remain visible.
 
 ## Use as a Template
 
@@ -31,11 +31,11 @@ The local website is available at `http://localhost:4321` by default. The projec
 
 The build selects one complete content source in the following order:
 
-1. `GH_FRC_CONTENT_DIR`, when explicitly configured.
-2. A sibling folder named `ghfrc-website-content`, when present.
+1. `LM_SITES_CONTENT_DIR`, when explicitly configured.
+2. A sibling folder named `lm-sites-contents`, when present.
 3. The public example `content/` folder in this repository.
 
-This allows the public project to run independently while letting GHFRC use its private sibling content repository locally. The selected source must contain both `config/site.yaml` and the required media files; the build does not mix files from different content sources.
+This allows the public project to run independently while letting LEOMOTIVE use its private sibling content repository locally. The selected source must contain both `config/site.yaml` and the required media files; the build does not mix files from different content sources.
 
 ## Verification
 
@@ -47,13 +47,13 @@ npm run build
 
 ## License
 
-The public website code and example content are released under the [MIT License](LICENSE). GHFRC's private content repository and brand assets are not included.
+The public website code and example content are released under the [MIT License](LICENSE). LEOMOTIVE's private content repository and brand assets are not included.
 
-# GHFRC 官网
+# LEOMOTIVE 官网
 
-GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
+LEOMOTIVE 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
 
-本仓库只包含可替换的示例内容。GHFRC 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
+本仓库只包含可替换的示例内容。LEOMOTIVE 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
 
 ## 项目结构
 
@@ -63,7 +63,7 @@ GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框�
 - `engineering-logs/`：项目所有模块当天的目标与实际完成工作。
 - `docs/`：实施规格和跨模块文档。
 
-经过净化的旧框架与皮肤完整历史已经连接到 `Tony` 分支，公开历史不包含 GHFRC 真实内容。将 `Tony` 合并到 `main` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash 或 Rebase。
+经过净化的旧框架与皮肤完整历史已经连接到 `Tony` 分支，公开历史不包含 LEOMOTIVE 真实内容。将 `Tony` 合并到 `main` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash 或 Rebase。
 
 ## 作为模板使用
 
@@ -82,11 +82,11 @@ npm run dev
 
 构建时按照以下顺序选择一套完整内容来源：
 
-1. 明确设置的 `GH_FRC_CONTENT_DIR`。
-2. 同级目录中的 `ghfrc-website-content` 文件夹。
+1. 明确设置的 `LM_SITES_CONTENT_DIR`。
+2. 同级目录中的 `lm-sites-contents` 文件夹。
 3. 本仓库中的公开示例 `content/` 文件夹。
 
-因此，公开项目可以独立运行，GHFRC 本地开发时也可以自动使用同级私有内容仓库。所选来源必须同时包含 `config/site.yaml` 和所需媒体文件，构建过程不会混用不同来源中的文件。
+因此，公开项目可以独立运行，LEOMOTIVE 本地开发时也可以自动使用同级私有内容仓库。所选来源必须同时包含 `config/site.yaml` 和所需媒体文件，构建过程不会混用不同来源中的文件。
 
 ## 验证
 
@@ -98,4 +98,4 @@ npm run build
 
 ## 许可证
 
-公开网站代码和示例内容使用 [MIT License](LICENSE)。GHFRC 私有内容仓库及品牌资产不包含在内。
+公开网站代码和示例内容使用 [MIT License](LICENSE)。LEOMOTIVE 私有内容仓库及品牌资产不包含在内。
