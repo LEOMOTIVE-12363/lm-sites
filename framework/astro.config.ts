@@ -6,7 +6,7 @@ import {
 } from './src/i18n/locales';
 
 export default defineConfig({
-  site: process.env.SITE_URL ?? 'https://ghfrc.org',
+  site: process.env.SITE_URL ?? 'https://leomotive.org',
   output: 'static',
   trailingSlash: 'always',
   i18n: {
