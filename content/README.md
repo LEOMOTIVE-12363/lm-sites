@@ -1,6 +1,6 @@
 # Example Content
 
-This folder contains public, replaceable example content for the website template. It does not contain GHFRC's private website media.
+This folder contains public, replaceable example content for the website template. It does not contain LEOMOTIVE's private website media.
 
 - `config/site.yaml`: site-wide metadata, navigation labels, accessibility labels, home-page hero copy, and legacy compatibility fields.
 - `pages/`: the eight primary page documents. Frontmatter controls page metadata and home-page summaries; Markdown holds the page body.
@@ -17,7 +17,7 @@ Replace the files in this folder with one complete content set. Do not place pas
 
 # 示例内容
 
-本文件夹保存网站模板中公开且可替换的示例内容，不包含 GHFRC 官网的私有媒体。
+本文件夹保存网站模板中公开且可替换的示例内容，不包含 LEOMOTIVE 官网的私有媒体。
 
 - `config/site.yaml`：全站元数据、导航文字、无障碍标签、首页首屏文字及旧框架兼容字段。
 - `pages/`：8 个主要页面文档。Frontmatter 管理页面元数据和首页摘要，Markdown 保存页面正文。

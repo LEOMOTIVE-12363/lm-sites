@@ -79,7 +79,7 @@ test('deduplicates repeated media references across text sources', () => {
 });
 
 test('clears staged media and the Astro content cache before changing content sources', async (t) => {
-  const temporaryRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-reset-'));
+  const temporaryRoot = await mkdtemp(join(tmpdir(), 'lm-sites-contents-reset-'));
   t.after(() => rm(temporaryRoot, { force: true, recursive: true }));
 
   const stagingContentRoot = join(temporaryRoot, 'public', 'content');
@@ -96,7 +96,7 @@ test('clears staged media and the Astro content cache before changing content so
 });
 
 test('discovers configured Markdown source trees recursively', async (t) => {
-  const contentRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-sources-'));
+  const contentRoot = await mkdtemp(join(tmpdir(), 'lm-sites-contents-sources-'));
   t.after(() => rm(contentRoot, { force: true, recursive: true }));
 
   const sourceFiles = [
@@ -136,7 +136,7 @@ test('discovers configured Markdown source trees recursively', async (t) => {
 });
 
 test('requires exactly eight page Markdown files', async (t) => {
-  const contentRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-pages-'));
+  const contentRoot = await mkdtemp(join(tmpdir(), 'lm-sites-contents-pages-'));
   t.after(() => rm(contentRoot, { force: true, recursive: true }));
 
   await mkdir(join(contentRoot, 'config'), { recursive: true });
@@ -158,7 +158,7 @@ test('requires exactly eight page Markdown files', async (t) => {
 });
 
 test('rejects media paths containing symbolic links', async (t) => {
-  const contentRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-symlink-'));
+  const contentRoot = await mkdtemp(join(tmpdir(), 'lm-sites-contents-symlink-'));
   t.after(() => rm(contentRoot, { force: true, recursive: true }));
 
   const mediaRoot = join(contentRoot, 'media');
@@ -175,7 +175,7 @@ test('rejects media paths containing symbolic links', async (t) => {
 });
 
 test('rejects symbolic links in recursively discovered text sources', async (t) => {
-  const contentRoot = await mkdtemp(join(tmpdir(), 'ghfrc-content-source-link-'));
+  const contentRoot = await mkdtemp(join(tmpdir(), 'lm-sites-contents-source-link-'));
   t.after(() => rm(contentRoot, { force: true, recursive: true }));
 
   await mkdir(join(contentRoot, 'config'), { recursive: true });

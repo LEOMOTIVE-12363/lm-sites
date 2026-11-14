@@ -9,7 +9,7 @@ import {
 const labels = {
   'about-frc': '关于 FRC',
   'about-xplore': '关于 X.PLORE',
-  'about-gh-frc': '关于 GHFRC',
+  'about-leomotive': '关于 LEOMOTIVE',
   robots: '机器人',
   achievements: '赛事成果',
   news: '新闻动态',
@@ -22,7 +22,7 @@ describe('site page structure', () => {
     expect(sitePagePlan.map(({ id, href }) => [id, href])).toEqual([
       ['about-frc', '/frc/'],
       ['about-xplore', '/xplore/'],
-      ['about-gh-frc', '/team/'],
+      ['about-leomotive', '/team/'],
       ['robots', '/robots/'],
       ['achievements', '/achievements/'],
       ['news', '/news/'],
@@ -43,7 +43,7 @@ describe('site page structure', () => {
   it('maps legacy homepage section hashes to their independent routes', () => {
     expect(resolveLegacySectionRoute('#about-frc')).toBe('/frc/');
     expect(resolveLegacySectionRoute('#about-xplore')).toBe('/xplore/');
-    expect(resolveLegacySectionRoute('#about-gh-frc')).toBe('/team/');
+    expect(resolveLegacySectionRoute('#about-leomotive')).toBe('/team/');
     expect(resolveLegacySectionRoute('#robots')).toBe('/robots/');
     expect(resolveLegacySectionRoute('#achievements')).toBe('/achievements/');
     expect(resolveLegacySectionRoute('#news')).toBe('/news/');

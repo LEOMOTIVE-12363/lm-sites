@@ -1,6 +1,6 @@
 # Framework
 
-The framework module owns the GHFRC website's page structure, components, routes, navigation behavior, responsive layout, accessibility foundation, and content interfaces. It does not store GHFRC's private production content or define the visual identity of future skins.
+The framework module owns the LEOMOTIVE website's page structure, components, routes, navigation behavior, responsive layout, accessibility foundation, and content interfaces. It does not store LEOMOTIVE's private production content or define the visual identity of future skins.
 
 The current implementation includes:
 
@@ -18,7 +18,7 @@ Run development, testing, checking, and build commands from the project root so 
 
 # 框架
 
-框架模块负责 GHFRC 官网的页面结构、组件、路由、导航行为、响应式布局、无障碍基础和内容接口。它不保存 GHFRC 的私有正式内容，也不定义未来皮肤的具体视觉风格。
+框架模块负责 LEOMOTIVE 官网的页面结构、组件、路由、导航行为、响应式布局、无障碍基础和内容接口。它不保存 LEOMOTIVE 的私有正式内容，也不定义未来皮肤的具体视觉风格。
 
 当前实现包括：
 
