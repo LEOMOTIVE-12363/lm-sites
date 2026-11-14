@@ -6,8 +6,8 @@ import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const projectRoot = fileURLToPath(new URL('../../', import.meta.url));
-const contentRoot = process.env.GH_FRC_CONTENT_DIR
-  ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
+const contentRoot = process.env.LM_SITES_CONTENT_DIR
+  ? resolve(projectRoot, process.env.LM_SITES_CONTENT_DIR)
   : resolve(projectRoot, 'content');
 const siteContentFile = resolve(contentRoot, 'config', 'site.yaml');
 const pagesContentDirectory = pathToFileURL(resolve(contentRoot, 'pages'));
@@ -68,7 +68,7 @@ const site = defineCollection({
     navigation: z.object({
       'about-frc': z.string().min(1),
       'about-xplore': z.string().min(1),
-      'about-gh-frc': z.string().min(1),
+      'about-leomotive': z.string().min(1),
       robots: z.string().min(1),
       achievements: z.string().min(1),
       news: z.string().min(1),
@@ -98,7 +98,7 @@ const page = defineCollection({
     navigationId: z.enum([
       'about-frc',
       'about-xplore',
-      'about-gh-frc',
+      'about-leomotive',
       'robots',
       'achievements',
       'news',

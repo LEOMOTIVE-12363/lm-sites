@@ -35,11 +35,11 @@ jobs:
           PUBLIC_SHA: ${{ github.sha }}
           PUBLIC_RUN_ID: ${{ github.run_id }}
           PUBLIC_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          PRIVATE_REPOSITORY: GH-FRC/ghfrc-website-content
+          PRIVATE_REPOSITORY: LEOMOTIVE-12363/lm-sites-contents
           PRIVATE_WORKFLOW: deploy-preview.yml
           PRIVATE_REF: preview
           PRIVATE_RUN_NAME_PREFIX: Deploy Preview website for
           ENVIRONMENT_NAME: preview
-          ENVIRONMENT_URL: https://preview.ghfrc.pages.dev
+          ENVIRONMENT_URL: https://preview.leomotive.pages.dev
           DEPLOYMENT_LABEL: Preview
         run: .github/scripts/track-private-deployment.sh

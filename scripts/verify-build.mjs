@@ -35,7 +35,7 @@ function countMatches(source, pattern) {
 }
 
 function toOutputPath(publicReference) {
-  const referenceUrl = new URL(publicReference, 'https://ghfrc.org/');
+  const referenceUrl = new URL(publicReference, 'https://leomotive.org/');
   const pathname = decodeURIComponent(referenceUrl.pathname);
 
   if (pathname === '/') {
@@ -114,7 +114,7 @@ for (const route of canonicalRoutes) {
 
 assert.doesNotMatch(
   homepageHtml,
-  /href="#(?:about-frc|about-xplore|about-gh-frc|robots|achievements|news|sponsors|contact)"/u,
+  /href="#(?:about-frc|about-xplore|about-leomotive|robots|achievements|news|sponsors|contact)"/u,
   'Homepage navigation must use independent routes instead of legacy section links.',
 );
 
