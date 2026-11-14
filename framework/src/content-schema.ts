@@ -125,7 +125,7 @@ export const siteSchema = z.object({
     metaDescription: z.string().min(1),
     eyebrow: z.string().min(1),
     title: z.string().min(1),
-    introduction: z.string().min(1),
+    introduction: z.string().min(1).optional(),
     upcomingTitle: z.string().min(1),
     pastTitle: z.string().min(1),
     upcomingLabel: z.string().min(1),
@@ -139,7 +139,7 @@ export const siteSchema = z.object({
   }),
   footer: z.object({
     title: z.string().min(1),
-    placeholder: z.string().min(1),
+    placeholder: z.string().min(1).optional(),
   }),
 });
 
@@ -267,13 +267,25 @@ export const eventSchema = z.discriminatedUnion('entryType', [
   z.object({
     entryType: z.literal('event'),
     title: z.string().min(1),
-    summary: z.string().min(1),
+    summary: z.string().min(1).optional(),
     description: z.string().min(1),
     startsAt: z.coerce.date(),
     endsAt: z.coerce.date(),
     dateText: z.string().min(1),
     timeText: z.string().min(1),
     venue: z.string().min(1),
+    sessions: z.array(z.object({
+      id: z.string().min(1),
+      title: z.string().min(1),
+      startsAt: z.coerce.date(),
+      endsAt: z.coerce.date(),
+      dateText: z.string().min(1),
+      timeText: z.string().min(1),
+      venue: z.string().min(1),
+    }).refine(
+      ({ startsAt, endsAt }) => endsAt.getTime() > startsAt.getTime(),
+      { message: 'An event session must end after it starts.' },
+    )).min(1).optional(),
     cover: localizedImageSchema,
     registration: z.object({
       name: z.string().min(1),
