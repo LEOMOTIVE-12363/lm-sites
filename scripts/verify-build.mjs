@@ -36,7 +36,7 @@ function countMatches(source, pattern) {
 }
 
 function toOutputPath(publicReference) {
-  const referenceUrl = new URL(publicReference, 'https://ghfrc.org/');
+  const referenceUrl = new URL(publicReference, 'https://leomotive.org/');
   const pathname = decodeURIComponent(referenceUrl.pathname);
 
   if (pathname === '/') {
@@ -146,7 +146,7 @@ for (const route of automaticRoutes) {
   const relativePath = route ? `${route}/index.html` : 'index.html';
   const html = await readFile(join(distRoot, relativePath), 'utf8');
 
-  assert.match(html, /__ghfrc_auto_language/u, `${relativePath} must select a language.`);
+  assert.match(html, /__leomotive_auto_language/u, `${relativePath} must select a language.`);
   assert.doesNotMatch(html, /data-site-header/u, `${relativePath} must remain a redirect entry.`);
 }
 
