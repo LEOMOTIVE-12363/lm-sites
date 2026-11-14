@@ -1,5 +1,5 @@
 {
-  "name": "gh-frc-website",
+  "name": "lm-sites",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,11 +10,11 @@
   ],
   "scripts": {
     "prepare:content": "node scripts/prepare-content.mjs",
-    "dev": "npm run prepare:content && npm --workspace @gh-frc/framework run dev",
-    "build": "npm run prepare:content && npm --workspace @gh-frc/framework run build",
-    "check": "npm run prepare:content && npm --workspace @gh-frc/framework run check",
-    "preview": "npm run prepare:content && npm --workspace @gh-frc/framework run preview",
-    "test": "npm --workspace @gh-frc/framework run test"
+    "dev": "npm run prepare:content && npm --workspace @lm-sites/framework run dev",
+    "build": "npm run prepare:content && npm --workspace @lm-sites/framework run build",
+    "check": "npm run prepare:content && npm --workspace @lm-sites/framework run check",
+    "preview": "npm run prepare:content && npm --workspace @lm-sites/framework run preview",
+    "test": "npm --workspace @lm-sites/framework run test"
   },
   "dependencies": {
     "yaml": "2.9.0"
