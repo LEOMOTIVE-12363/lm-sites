@@ -34,11 +34,11 @@ jobs:
           PUBLIC_SHA: ${{ github.sha }}
           PUBLIC_RUN_ID: ${{ github.run_id }}
           PUBLIC_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          PRIVATE_REPOSITORY: GH-FRC/ghfrc-website-content
+          PRIVATE_REPOSITORY: LEOMOTIVE-12363/lm-sites-contents
           PRIVATE_WORKFLOW: deploy-stable.yml
           PRIVATE_REF: stable
           PRIVATE_RUN_NAME_PREFIX: Deploy stable website for
           ENVIRONMENT_NAME: production
-          ENVIRONMENT_URL: https://ghfrc.pages.dev
+          ENVIRONMENT_URL: https://leomotive.pages.dev
           DEPLOYMENT_LABEL: stable
         run: .github/scripts/track-private-deployment.sh

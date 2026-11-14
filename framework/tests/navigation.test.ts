@@ -11,12 +11,12 @@ describe('home navigation', () => {
       [
         { id: 'about-frc' },
         { id: 'about-xplore' },
-        { id: 'about-gh-frc' },
+        { id: 'about-leomotive' },
       ] as const,
       {
         'about-frc': '关于 FRC',
         'about-xplore': '关于 X.PLORE',
-        'about-gh-frc': '关于 GHFRC',
+        'about-leomotive': '关于 LEOMOTIVE',
       },
     );
 
@@ -32,8 +32,8 @@ describe('home navigation', () => {
         opensInNewTab: false,
       },
       {
-        href: '#about-gh-frc',
-        label: '关于 GHFRC',
+        href: '#about-leomotive',
+        label: '关于 LEOMOTIVE',
         opensInNewTab: false,
       },
     ]);

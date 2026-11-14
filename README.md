@@ -1,8 +1,8 @@
-# GHFRC Website
+# lm-sites
 
-GHFRC Website is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
+lm-sites is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
 
-The repository contains only replaceable example content. GHFRC's real website content is maintained separately in a private repository and is not part of this project.
+The repository contains only replaceable example content. LEOMOTIVE's real website content is maintained separately in a private repository and is not part of this project.
 
 ## Project Structure
 
@@ -12,9 +12,9 @@ The repository contains only replaceable example content. GHFRC's real website c
 - `engineering-logs/`: project-wide same-day goals and completed work.
 - `docs/`: implementation specifications and cross-module documentation.
 
-The complete sanitized legacy framework and skin history is connected to the `preview` branch. The public history excludes GHFRC's real content. Use a regular Merge commit when merging `preview` into `stable`; do not use Squash and merge or Rebase and merge if the legacy topology must remain visible.
+The complete sanitized legacy framework and skin history is connected to the `preview` branch. The public history excludes LEOMOTIVE's real content. Use a regular Merge commit when merging `preview` into `stable`; do not use Squash and merge or Rebase and merge if the legacy topology must remain visible.
 
-The stable website is published at `https://ghfrc.pages.dev`. A trusted GitHub Actions workflow in the private content repository builds the latest public `stable` framework together with the latest private `stable` content, then uploads only the generated static output to Cloudflare Pages. A public `stable` update securely triggers that private workflow, while a private `stable` update starts it directly.
+The stable website is published at `https://leomotive.pages.dev`. A trusted GitHub Actions workflow in the private content repository builds the latest public `stable` framework together with the latest private `stable` content, then uploads only the generated static output to Cloudflare Pages. A public `stable` update securely triggers that private workflow, while a private `stable` update starts it directly.
 
 Changes to `stable` must be introduced through a Pull Request. The `Stable pull request checks` workflow validates Astro content and code, runs the automated tests, builds the public example website, and rejects internal reference media before the Pull Request can be merged.
 
@@ -35,10 +35,10 @@ The local website is available at `http://localhost:4321` by default. The projec
 
 The build selects one complete content source in the following order:
 
-1. `GH_FRC_CONTENT_DIR`, when explicitly configured.
+1. `LM_SITES_CONTENT_DIR`, when explicitly configured.
 2. The public example `content/` folder in this repository.
 
-This keeps public and preview builds on the replaceable example content by default, even when GHFRC's private content repository exists beside the project locally. Set `GH_FRC_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain both `config/site.yaml` and the required media files; the build does not mix files from different content sources.
+This keeps public and preview builds on the replaceable example content by default, even when LEOMOTIVE's private content repository exists beside the project locally. Set `LM_SITES_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain both `config/site.yaml` and the required media files; the build does not mix files from different content sources.
 
 ## Verification
 
@@ -50,13 +50,13 @@ npm run build
 
 ## License
 
-The public website code and example content are released under the [MIT License](LICENSE). GHFRC's private content repository and brand assets are not included.
+The public website code and example content are released under the [MIT License](LICENSE). LEOMOTIVE's private content repository and brand assets are not included.
 
-# GHFRC 官网
+# LEOMOTIVE 官网
 
-GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
+LEOMOTIVE 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
 
-本仓库只包含可替换的示例内容。GHFRC 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
+本仓库只包含可替换的示例内容。LEOMOTIVE 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
 
 ## 项目结构
 
@@ -66,9 +66,9 @@ GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框�
 - `engineering-logs/`：项目所有模块当天的目标与实际完成工作。
 - `docs/`：实施规格和跨模块文档。
 
-经过净化的旧框架与皮肤完整历史已经连接到 `preview` 分支，公开历史不包含 GHFRC 真实内容。将 `preview` 合并到 `stable` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash and merge 或 Rebase and merge。
+经过净化的旧框架与皮肤完整历史已经连接到 `preview` 分支，公开历史不包含 LEOMOTIVE 真实内容。将 `preview` 合并到 `stable` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash and merge 或 Rebase and merge。
 
-稳定版官网发布于 `https://ghfrc.pages.dev`。私有内容仓库中的受信任 GitHub Actions 工作流会将最新公开 `stable` 框架与最新私有 `stable` 内容组合构建，然后仅将生成的静态产物上传至 Cloudflare Pages。公开 `stable` 更新时会安全触发该私有工作流，私有 `stable` 更新时则会直接启动该工作流。
+稳定版官网发布于 `https://leomotive.pages.dev`。私有内容仓库中的受信任 GitHub Actions 工作流会将最新公开 `stable` 框架与最新私有 `stable` 内容组合构建，然后仅将生成的静态产物上传至 Cloudflare Pages。公开 `stable` 更新时会安全触发该私有工作流，私有 `stable` 更新时则会直接启动该工作流。
 
 对 `stable` 的改动必须通过 Pull Request 引入。`Stable pull request checks` 工作流会校验 Astro 内容与代码、运行自动化测试、构建公开示例官网，并拒绝内部参考媒体；检查通过后才能合并 Pull Request。
 
@@ -89,10 +89,10 @@ npm run dev
 
 构建时按照以下顺序选择一套完整内容来源：
 
-1. 明确设置的 `GH_FRC_CONTENT_DIR`。
+1. 明确设置的 `LM_SITES_CONTENT_DIR`。
 2. 本仓库中的公开示例 `content/` 文件夹。
 
-这样，即使 GHFRC 私有内容仓库位于本项目旁边，公开构建和预览构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `GH_FRC_CONTENT_DIR`。所选来源必须同时包含 `config/site.yaml` 和所需媒体文件，构建过程不会混用不同来源中的文件。
+这样，即使 LEOMOTIVE 私有内容仓库位于本项目旁边，公开构建和预览构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `LM_SITES_CONTENT_DIR`。所选来源必须同时包含 `config/site.yaml` 和所需媒体文件，构建过程不会混用不同来源中的文件。
 
 ## 验证
 
@@ -104,4 +104,4 @@ npm run build
 
 ## 许可证
 
-公开网站代码和示例内容使用 [MIT License](LICENSE)。GHFRC 私有内容仓库及品牌资产不包含在内。
+公开网站代码和示例内容使用 [MIT License](LICENSE)。LEOMOTIVE 私有内容仓库及品牌资产不包含在内。
