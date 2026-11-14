@@ -35,7 +35,7 @@ The build selects one complete content source in the following order:
 1. `GH_FRC_CONTENT_DIR`, when explicitly configured.
 2. The public example `content/` folder in this repository.
 
-This keeps public and preview builds on the replaceable example content by default, even when GHFRC's private content repository exists beside the project locally. Set `GH_FRC_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain both `config/site.yaml` and the required media files; the build does not mix files from different content sources.
+This keeps public builds on the replaceable example content by default, even when GHFRC's private content repository exists beside the project locally. Set `GH_FRC_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain `config/site.yaml`, exactly eight primary Markdown files under `pages/`, the `robots/` and `news/` collection directories, and every media file referenced by those documents. Before each build, the staging script clears the previous staged content and copies only validated, explicitly referenced media from the selected source, so files from different content sets cannot be mixed.
 
 ## Verification
 
@@ -44,6 +44,8 @@ npm test
 npm run check
 npm run build
 ```
+
+Pull Requests targeting `preview` must pass the `Preview pull request checks` workflow before merging. Direct pushes, force pushes, and branch deletion are blocked for `preview`, including for repository administrators. The request workflow notifies the private content repository after an approved public `preview` update and runs when the repository variable `PREVIEW_DEPLOYMENT_ENABLED` is exactly `true`. It requires the repository Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`, limited to triggering and reading the private deployment workflow. The private workflow publishes the tested result to `https://preview.ghfrc.pages.dev`, while this public repository records the matching Preview Deployment status without receiving private content or Cloudflare credentials.
 
 ## License
 
@@ -86,7 +88,7 @@ npm run dev
 1. 明确设置的 `GH_FRC_CONTENT_DIR`。
 2. 本仓库中的公开示例 `content/` 文件夹。
 
-这样，即使 GHFRC 私有内容仓库位于本项目旁边，公开构建和预览构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `GH_FRC_CONTENT_DIR`。所选来源必须同时包含 `config/site.yaml` 和所需媒体文件，构建过程不会混用不同来源中的文件。
+这样，即使 GHFRC 私有内容仓库位于本项目旁边，公开构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `GH_FRC_CONTENT_DIR`。所选来源必须包含 `config/site.yaml`、`pages/` 下严格对应 8 个主要页面的 Markdown 文件、`robots/` 与 `news/` 内容集合目录，以及这些文档明确引用的全部媒体文件。每次构建前，暂存脚本都会先清空上一次的暂存内容，再从当前内容来源复制经过校验且被明确引用的媒体，因此不会混用不同内容集中的文件。
 
 ## 验证
 
@@ -95,6 +97,8 @@ npm test
 npm run check
 npm run build
 ```
+
+以 `preview` 为目标分支的 Pull Request 必须通过 `Preview pull request checks` 工作流后才能合并。`preview` 禁止直接推送、强制推送和删除分支，并且仓库管理员同样不能绕过。请求工作流会在获准合并的公开 `preview` 更新后通知私有内容仓库，并在仓库变量 `PREVIEW_DEPLOYMENT_ENABLED` 严格等于 `true` 时运行。该工作流需要仓库 Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`，其权限仅限触发和读取私有部署工作流。私有工作流会将通过测试的结果发布至 `https://preview.ghfrc.pages.dev`，公开仓库则记录对应的 Preview Deployment 状态，但不会获得私有内容或 Cloudflare 凭据。
 
 ## 许可证
 
