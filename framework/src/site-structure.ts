@@ -2,7 +2,7 @@ import type { Locale } from './i18n/locales';
 
 export const sitePagePlan = [
   { id: 'about-frc', contentId: 'frc', order: 1 },
-  { id: 'about-gh-frc', contentId: 'team', order: 2 },
+  { id: 'about-leomotive', contentId: 'team', order: 2 },
   { id: 'robots', contentId: 'robots', order: 3 },
   { id: 'sponsors', contentId: 'sponsors', order: 4 },
   { id: 'contact', contentId: 'contact', order: 5 },
