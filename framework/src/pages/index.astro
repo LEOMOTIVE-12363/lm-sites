@@ -19,9 +19,11 @@ const site = siteEntry.data;
 const sectionPlan = [
   { id: 'about-frc', index: '02', variant: 'split' },
   { id: 'about-gh-frc', index: '03', variant: 'overview' },
-  { id: 'news', index: '04', variant: 'news' },
-  { id: 'sponsors', index: '05', variant: 'sponsors' },
-  { id: 'contact', index: '06', variant: 'contact' },
+  { id: 'robots', index: '04', variant: 'feature' },
+  { id: 'achievements', index: '05', variant: 'grid' },
+  { id: 'news', index: '06', variant: 'news' },
+  { id: 'sponsors', index: '07', variant: 'sponsors' },
+  { id: 'contact', index: '08', variant: 'contact' },
 ] as const;
 
 const navigationItems = createHomeNavigationItems(sectionPlan, site.navigation);
