@@ -26,7 +26,7 @@ const trackedSectionKeys = [
   'page-top',
   'about-frc',
   'about-xplore',
-  'about-gh-frc',
+  'about-leomotive',
   'robots',
   'achievements',
   'news',
@@ -120,7 +120,7 @@ describe('achievement system', () => {
 
     await vi.waitFor(() => expect(start).toHaveBeenCalledOnce());
 
-    const message = document.querySelector<HTMLElement>('.ghfrc-achievement-toast__copy');
+    const message = document.querySelector<HTMLElement>('.leomotive-achievement-toast__copy');
     expect(message?.textContent?.trim()).toBe('成就已解锁');
   });
 
@@ -144,7 +144,7 @@ describe('achievement system', () => {
     window.dispatchEvent(new PointerEvent('pointerdown'));
 
     await vi.waitFor(() => expect(start).toHaveBeenCalledOnce());
-    expect(document.querySelector('.ghfrc-achievement-toast__copy')?.textContent?.trim()).toBe(
+    expect(document.querySelector('.leomotive-achievement-toast__copy')?.textContent?.trim()).toBe(
       '成就已解锁',
     );
   });
@@ -258,7 +258,7 @@ describe('achievement system', () => {
     });
 
     await vi.waitFor(() => expect(resumedStart).toHaveBeenCalledOnce());
-    expect(document.querySelector('.ghfrc-achievement-toast__copy')?.textContent?.trim()).toBe(
+    expect(document.querySelector('.leomotive-achievement-toast__copy')?.textContent?.trim()).toBe(
       '成就已解锁',
     );
   });
@@ -486,7 +486,7 @@ describe('achievement system', () => {
     });
 
     await vi.waitFor(() => expect(start).toHaveBeenCalledOnce());
-    expect(document.querySelector('.ghfrc-achievement-toast__copy')?.textContent?.trim()).toBe(
+    expect(document.querySelector('.leomotive-achievement-toast__copy')?.textContent?.trim()).toBe(
       '成就已解锁',
     );
   });
@@ -539,8 +539,8 @@ describe('achievement system', () => {
       }),
     );
     const storage = window.localStorage;
-    storage.setItem('ghfrc-achievements:v1:unlocked:first-visit', '1');
-    storage.setItem('ghfrc-achievements:v1:unlocked:all-sections-visited', '1');
+    storage.setItem('leomotive-achievements:v1:unlocked:first-visit', '1');
+    storage.setItem('leomotive-achievements:v1:unlocked:all-sections-visited', '1');
     let firstPresentationRecheck = true;
     let presentationStarted = false;
     const baseGetItem = storage.getItem.bind(storage);
@@ -548,7 +548,7 @@ describe('achievement system', () => {
       if (
         firstPresentationRecheck &&
         presentationStarted &&
-        key === 'ghfrc-achievements:v1:presented:first-visit'
+        key === 'leomotive-achievements:v1:presented:first-visit'
       ) {
         firstPresentationRecheck = false;
         return '1';
@@ -624,7 +624,7 @@ describe('achievement system', () => {
     expect(toast.getAttribute('role')).toBe('status');
     expect(toast.getAttribute('aria-live')).toBe('polite');
     expect(toast.querySelector('[data-achievement-placeholder-icon]')).not.toBeNull();
-    expect(toast.querySelector('.ghfrc-achievement-toast__copy')?.textContent?.trim()).toBe(
+    expect(toast.querySelector('.leomotive-achievement-toast__copy')?.textContent?.trim()).toBe(
       '成就已解锁',
     );
     expect(toast.textContent).not.toContain('Steam');

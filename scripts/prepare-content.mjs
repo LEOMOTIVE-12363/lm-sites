@@ -6,9 +6,9 @@ import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const siblingPrivateContentRoot = resolve(projectRoot, '..', 'ghfrc-website-content');
-const contentRoot = process.env.GH_FRC_CONTENT_DIR
-  ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
+const siblingPrivateContentRoot = resolve(projectRoot, '..', 'lm-sites-contents');
+const contentRoot = process.env.LM_SITES_CONTENT_DIR
+  ? resolve(projectRoot, process.env.LM_SITES_CONTENT_DIR)
   : existsSync(join(siblingPrivateContentRoot, 'config', 'site.yaml'))
     ? siblingPrivateContentRoot
     : join(projectRoot, 'content');

@@ -7,9 +7,9 @@ import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const projectRoot = fileURLToPath(new URL('../../', import.meta.url));
-const siblingPrivateContentRoot = resolve(projectRoot, '..', 'ghfrc-website-content');
-const contentRoot = process.env.GH_FRC_CONTENT_DIR
-  ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
+const siblingPrivateContentRoot = resolve(projectRoot, '..', 'lm-sites-contents');
+const contentRoot = process.env.LM_SITES_CONTENT_DIR
+  ? resolve(projectRoot, process.env.LM_SITES_CONTENT_DIR)
   : existsSync(resolve(siblingPrivateContentRoot, 'config', 'site.yaml'))
     ? siblingPrivateContentRoot
     : resolve(projectRoot, 'content');
@@ -43,7 +43,7 @@ const site = defineCollection({
     navigation: z.object({
       'about-frc': z.string().min(1),
       'about-xplore': z.string().min(1),
-      'about-gh-frc': z.string().min(1),
+      'about-leomotive': z.string().min(1),
       robots: z.string().min(1),
       achievements: z.string().min(1),
       news: z.string().min(1),
@@ -58,7 +58,7 @@ const site = defineCollection({
     sections: z.object({
       'about-frc': sectionSchema,
       'about-xplore': sectionSchema,
-      'about-gh-frc': sectionSchema,
+      'about-leomotive': sectionSchema,
       robots: sectionSchema,
       achievements: sectionSchema,
       news: sectionSchema,
