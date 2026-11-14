@@ -15,7 +15,6 @@ The current implementation includes:
 - Header behavior that hides while scrolling down, returns while scrolling up, and remains available during navigation-triggered scrolling.
 - Legacy redirects from the former homepage hashes and `/about-frc/` route into the corresponding localized pages.
 - Content validation, safe media staging, static-output verification, and interaction tests.
-- Optional integration with the independent `achievements/` runtime through stable page markers; removing that module does not prevent the framework from building.
 
 Run development, testing, checking, and build commands from the project root so the selected content is validated and staged before Astro runs.
 
@@ -36,6 +35,5 @@ Run development, testing, checking, and build commands from the project root so 
 - 向下滚动时隐藏、向上滚动时返回，并在导航触发滚动期间保持可用的标题栏行为。
 - 从旧首页 Hash 和 `/about-frc/` 路径进入对应本地化页面的兼容跳转。
 - 内容校验、安全媒体暂存、静态产物检查和交互测试。
-- 通过稳定的页面标记可选接入独立 `achievements/` 运行时；完整移除该模块也不会阻止框架构建。
 
 请从项目根目录运行开发、测试、检查和构建命令，以确保 Astro 启动前已经校验并暂存所选内容。
