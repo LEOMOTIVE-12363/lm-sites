@@ -7,14 +7,12 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const distRoot = join(projectRoot, 'framework', 'dist');
 const pageSlugs = [
   'frc',
-  'xplore',
   'team',
   'robots',
-  'achievements',
-  'news',
   'sponsors',
   'contact',
 ];
+const inactivePageSlugs = ['xplore', 'achievements', 'news'];
 const automaticRoutes = ['', 'about-frc', ...pageSlugs];
 const localizedRoutes = ['zh-cn', 'en'].flatMap((locale) => (
   ['', ...pageSlugs].map((slug) => [locale, slug].filter(Boolean).join('/'))
@@ -156,8 +154,13 @@ for (const locale of ['zh-cn', 'en']) {
   const robotsHtml = await readFile(join(distRoot, locale, 'robots', 'index.html'), 'utf8');
   assert.match(robotsHtml, /poster-card poster-card--empty/u, 'Robots must show one generic poster when empty.');
 
-  const newsHtml = await readFile(join(distRoot, locale, 'news', 'index.html'), 'utf8');
-  assert.match(newsHtml, /class="empty-state"/u, 'News must retain its empty state.');
+  for (const slug of inactivePageSlugs) {
+    assert.equal(
+      await fileExists(join(distRoot, locale, slug, 'index.html')),
+      false,
+      `${locale}/${slug} must remain unpublished in Stable.`,
+    );
+  }
 }
 
 assert.equal(await fileExists(join(distRoot, 'zh-hant')), false, 'zh-Hant routes must not be generated.');
