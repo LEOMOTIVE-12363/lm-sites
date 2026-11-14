@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { pageSchema } from '../src/content-schema';
 
 const example = {
-  navigationId: 'about-gh-frc',
+  navigationId: 'about-leomotive',
   order: 2,
   layout: 'editorial',
   meta: { title: 'Our club', description: 'A community robotics club.' },

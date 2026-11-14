@@ -33,7 +33,7 @@ function countMatches(source, pattern) {
 }
 
 function toOutputPath(publicReference) {
-  const referenceUrl = new URL(publicReference, 'https://ghfrc.org/');
+  const referenceUrl = new URL(publicReference, 'https://leomotive.org/');
   const pathname = decodeURIComponent(referenceUrl.pathname);
 
   if (pathname === '/') {
@@ -56,7 +56,7 @@ async function assertVersionedFavicon(html, relativePath, scheme) {
   assert.ok(reference?.startsWith('/content/'), `${relativePath} must provide a content-supplied ${scheme} favicon.`);
   const contents = await readFile(toOutputPath(reference));
   const expectedRevision = `${createHash('sha256').update(contents).digest('hex').slice(0, 12)}-${scheme}`;
-  const actualRevision = new URL(reference, 'https://ghfrc.org/').searchParams.get('favicon');
+  const actualRevision = new URL(reference, 'https://leomotive.org/').searchParams.get('favicon');
 
   assert.equal(
     actualRevision,
@@ -99,7 +99,7 @@ async function readScriptClosure(initialReferences) {
     scripts.push(source);
 
     for (const match of source.matchAll(/(?:\bfrom\s*|\bimport\s*)["']([^"']+\.js)["']/gu)) {
-      const dependency = new URL(match[1], new URL(reference, 'https://ghfrc.org/')).pathname;
+      const dependency = new URL(match[1], new URL(reference, 'https://leomotive.org/')).pathname;
 
       if (dependency.startsWith('/')) {
         pending.push(dependency);
@@ -140,7 +140,7 @@ function imageReferenceFrom(source, context) {
 }
 
 async function assertValidContentImage(publicReference, context) {
-  const referenceUrl = new URL(publicReference, 'https://ghfrc.org/');
+  const referenceUrl = new URL(publicReference, 'https://leomotive.org/');
 
   assert.match(
     decodeURIComponent(referenceUrl.pathname),
@@ -297,10 +297,10 @@ for (const route of automaticRoutes) {
   const localizedRoute = route === 'about-frc' ? 'frc' : route;
   const normalizedLocalizedRoute = localizedRoute ? `${localizedRoute}/` : '';
 
-  assert.match(html, /__ghfrc_auto_language/u, `${relativePath} must select a language.`);
+  assert.match(html, /__leomotive_auto_language/u, `${relativePath} must select a language.`);
   assert.match(
     html,
-    /localStorage\.getItem\(["']ghfrc-language["']\)/u,
+    /localStorage\.getItem\(["']leomotive-language["']\)/u,
     `${relativePath} must honor the visitor's stored language choice.`,
   );
   assert.match(

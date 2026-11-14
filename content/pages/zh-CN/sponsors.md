@@ -19,6 +19,6 @@ emptyState:
   eyebrow: Sponsors
   title: 暂无赞助商
   body: 我们正在寻找愿意支持青少年工程教育与机器人创新的合作伙伴。
-  actionLabel: 成为 GHFRC 的首位赞助商
+  actionLabel: 成为 LEOMOTIVE 的首位赞助商
   actionHref: /zh-cn/contact/
 ---

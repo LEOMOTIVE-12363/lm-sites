@@ -1,8 +1,8 @@
-# GHFRC Website
+# lm-sites
 
-GHFRC Website is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
+lm-sites is the public website codebase and a reusable website template. Framework development, skins, branches, Pull Requests, Issues, and engineering history are maintained in this repository.
 
-The repository contains only replaceable example content. GHFRC's real website content is maintained separately in a private repository and is not part of this project.
+The repository contains only replaceable example content. LEOMOTIVE's real website content is maintained separately in a private repository and is not part of this project.
 
 ## Project Structure
 
@@ -13,7 +13,7 @@ The repository contains only replaceable example content. GHFRC's real website c
 - `engineering-logs/`: project-wide same-day goals and completed work.
 - `docs/`: implementation specifications and cross-module documentation.
 
-The complete sanitized legacy framework and skin history is connected to the `Tony` branch. The public history excludes GHFRC's real content. Use a regular merge commit when merging `Tony` into `main`; do not squash or rebase if the legacy topology must remain visible.
+The complete sanitized legacy framework and skin history is connected to the `Tony` branch. The public history excludes LEOMOTIVE's real content. Use a regular merge commit when merging `Tony` into `main`; do not squash or rebase if the legacy topology must remain visible.
 
 ## Use as a Template
 
@@ -32,10 +32,10 @@ The local website is available at `http://localhost:4321` by default. The projec
 
 The build selects one complete content source in the following order:
 
-1. `GH_FRC_CONTENT_DIR`, when explicitly configured.
+1. `LM_SITES_CONTENT_DIR`, when explicitly configured.
 2. The public example `content/` folder in this repository.
 
-This keeps public builds on the replaceable example content by default, even when GHFRC's private content repository exists beside the project locally. Set `GH_FRC_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain locale-specific site configuration under `config/locales/`, exactly seven retained Markdown files in each enabled locale folder under `pages/`, localized event documents under `events/`, the `robots/` and `news/` collection directories, and every media file referenced by those documents. Stable currently publishes five of those page documents plus the event archive; Competition Results and News remain retained but unpublished. Before each build, the staging script clears the previous staged content and copies only validated, explicitly referenced media from the selected source, so files from different content sets cannot be mixed.
+This keeps public builds on the replaceable example content by default, even when LEOMOTIVE's private content repository exists beside the project locally. Set `LM_SITES_CONTENT_DIR` explicitly when a trusted build needs the private content. The selected source must contain locale-specific site configuration under `config/locales/`, exactly seven retained Markdown files in each enabled locale folder under `pages/`, localized event documents under `events/`, the `robots/` and `news/` collection directories, and every media file referenced by those documents. Stable currently publishes five of those page documents plus the event archive; Competition Results and News remain retained but unpublished. Before each build, the staging script clears the previous staged content and copies only validated, explicitly referenced media from the selected source, so files from different content sets cannot be mixed.
 
 ## Languages
 
@@ -51,17 +51,17 @@ npm run check
 npm run build
 ```
 
-Pull Requests targeting `preview` must pass the `Preview pull request checks` workflow before merging. Direct pushes, force pushes, and branch deletion are blocked for `preview`, including for repository administrators. The request workflow notifies the private content repository after an approved public `preview` update and runs when the repository variable `PREVIEW_DEPLOYMENT_ENABLED` is exactly `true`. It requires the repository Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`, limited to triggering and reading the private deployment workflow. The private workflow publishes the tested result to `https://preview.ghfrc.pages.dev`, while this public repository records the matching Preview Deployment status without receiving private content or Cloudflare credentials.
+Pull Requests targeting `preview` must pass the `Preview pull request checks` workflow before merging. Direct pushes, force pushes, and branch deletion are blocked for `preview`, including for repository administrators. The request workflow notifies the private content repository after an approved public `preview` update and runs when the repository variable `PREVIEW_DEPLOYMENT_ENABLED` is exactly `true`. It requires the repository Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`, limited to triggering and reading the private deployment workflow. The private workflow publishes the tested result to `https://preview.leomotive.pages.dev`, while this public repository records the matching Preview Deployment status without receiving private content or Cloudflare credentials.
 
 ## License
 
-The public website code and example content are released under the [MIT License](LICENSE). GHFRC's private content repository and brand assets are not included.
+The public website code and example content are released under the [MIT License](LICENSE). LEOMOTIVE's private content repository and brand assets are not included.
 
-# GHFRC 官网
+# LEOMOTIVE 官网
 
-GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
+LEOMOTIVE 官网是公开的网站代码库，也是可复用的网站模板。框架开发、皮肤、分支、Pull Request、Issue 和工程历史均在本仓库中公开维护。
 
-本仓库只包含可替换的示例内容。GHFRC 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
+本仓库只包含可替换的示例内容。LEOMOTIVE 官网的真实内容单独保存在私有仓库中，不属于本项目的一部分。
 
 ## 项目结构
 
@@ -72,7 +72,7 @@ GHFRC 官网是公开的网站代码库，也是可复用的网站模板。框�
 - `engineering-logs/`：项目所有模块当天的目标与实际完成工作。
 - `docs/`：实施规格和跨模块文档。
 
-经过净化的旧框架与皮肤完整历史已经连接到 `Tony` 分支，公开历史不包含 GHFRC 真实内容。将 `Tony` 合并到 `main` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash 或 Rebase。
+经过净化的旧框架与皮肤完整历史已经连接到 `Tony` 分支，公开历史不包含 LEOMOTIVE 真实内容。将 `Tony` 合并到 `main` 时应使用普通 Merge commit；如需保留旧历史拓扑，不要使用 Squash 或 Rebase。
 
 ## 作为模板使用
 
@@ -91,10 +91,10 @@ npm run dev
 
 构建时按照以下顺序选择一套完整内容来源：
 
-1. 明确设置的 `GH_FRC_CONTENT_DIR`。
+1. 明确设置的 `LM_SITES_CONTENT_DIR`。
 2. 本仓库中的公开示例 `content/` 文件夹。
 
-这样，即使 GHFRC 私有内容仓库位于本项目旁边，公开构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `GH_FRC_CONTENT_DIR`。所选来源必须包含 `config/locales/` 下按语言划分的全站配置、`pages/` 下每个启用语言严格对应 7 份保留页面 Markdown 文件、`events/` 下的本地化活动文档、`robots/` 与 `news/` 内容集合目录，以及这些文档明确引用的全部媒体文件。Stable 当前发布其中 5 个页面和活动归档，“赛事成果”和“新闻动态”保留但不发布。每次构建前，暂存脚本都会先清空上一次的暂存内容，再从当前内容来源复制经过校验且被明确引用的媒体，因此不会混用不同内容集中的文件。
+这样，即使 LEOMOTIVE 私有内容仓库位于本项目旁边，公开构建默认仍会使用可替换的示例内容。只有受信任的构建需要使用私有内容时，才明确设置 `LM_SITES_CONTENT_DIR`。所选来源必须包含 `config/locales/` 下按语言划分的全站配置、`pages/` 下每个启用语言严格对应 7 份保留页面 Markdown 文件、`events/` 下的本地化活动文档、`robots/` 与 `news/` 内容集合目录，以及这些文档明确引用的全部媒体文件。Stable 当前发布其中 5 个页面和活动归档，“赛事成果”和“新闻动态”保留但不发布。每次构建前，暂存脚本都会先清空上一次的暂存内容，再从当前内容来源复制经过校验且被明确引用的媒体，因此不会混用不同内容集中的文件。
 
 ## 语言
 
@@ -110,8 +110,8 @@ npm run check
 npm run build
 ```
 
-以 `preview` 为目标分支的 Pull Request 必须通过 `Preview pull request checks` 工作流后才能合并。`preview` 禁止直接推送、强制推送和删除分支，并且仓库管理员同样不能绕过。请求工作流会在获准合并的公开 `preview` 更新后通知私有内容仓库，并在仓库变量 `PREVIEW_DEPLOYMENT_ENABLED` 严格等于 `true` 时运行。该工作流需要仓库 Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`，其权限仅限触发和读取私有部署工作流。私有工作流会将通过测试的结果发布至 `https://preview.ghfrc.pages.dev`，公开仓库则记录对应的 Preview Deployment 状态，但不会获得私有内容或 Cloudflare 凭据。
+以 `preview` 为目标分支的 Pull Request 必须通过 `Preview pull request checks` 工作流后才能合并。`preview` 禁止直接推送、强制推送和删除分支，并且仓库管理员同样不能绕过。请求工作流会在获准合并的公开 `preview` 更新后通知私有内容仓库，并在仓库变量 `PREVIEW_DEPLOYMENT_ENABLED` 严格等于 `true` 时运行。该工作流需要仓库 Secret `PRIVATE_DEPLOYMENT_TRIGGER_TOKEN`，其权限仅限触发和读取私有部署工作流。私有工作流会将通过测试的结果发布至 `https://preview.leomotive.pages.dev`，公开仓库则记录对应的 Preview Deployment 状态，但不会获得私有内容或 Cloudflare 凭据。
 
 ## 许可证
 
-公开网站代码和示例内容使用 [MIT License](LICENSE)。GHFRC 私有内容仓库及品牌资产不包含在内。
+公开网站代码和示例内容使用 [MIT License](LICENSE)。LEOMOTIVE 私有内容仓库及品牌资产不包含在内。
