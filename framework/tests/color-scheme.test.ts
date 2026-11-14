@@ -27,7 +27,7 @@ describe('color scheme pre-paint bootstrap', () => {
   });
 
   it('applies a valid session choice before the interface initializes', () => {
-    sessionStorage.setItem('ghfrc-color-scheme', 'dark');
+    sessionStorage.setItem('leomotive-color-scheme', 'dark');
 
     runColorSchemeBootstrap();
 
@@ -35,12 +35,12 @@ describe('color scheme pre-paint bootstrap', () => {
   });
 
   it('removes invalid session data and leaves the system preference active', () => {
-    sessionStorage.setItem('ghfrc-color-scheme', 'sepia');
+    sessionStorage.setItem('leomotive-color-scheme', 'sepia');
     document.documentElement.dataset.colorScheme = 'light';
 
     runColorSchemeBootstrap();
 
-    expect(sessionStorage.getItem('ghfrc-color-scheme')).toBeNull();
+    expect(sessionStorage.getItem('leomotive-color-scheme')).toBeNull();
     expect(document.documentElement.dataset.colorScheme).toBeUndefined();
   });
 
@@ -147,7 +147,7 @@ describe('color scheme controls', () => {
     toggle.click();
 
     expect(document.documentElement.dataset.colorScheme).toBe('dark');
-    expect(sessionStorage.getItem('ghfrc-color-scheme')).toBe('dark');
+    expect(sessionStorage.getItem('leomotive-color-scheme')).toBe('dark');
     expect(toggle.getAttribute('aria-label')).toBe('切换至浅色模式');
 
     interactionHandle.destroy();
