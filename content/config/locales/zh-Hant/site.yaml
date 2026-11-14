@@ -1,6 +1,6 @@
 site:
-  title: GHFRC
-  description: GHFRC 隊伍官方網站框架
+  title: LEOMOTIVE
+  description: LEOMOTIVE 隊伍官方網站框架
   logo:
     src: /content/images/placeholder-logo.png
     alt: 示例隊伍 Logo
@@ -48,7 +48,7 @@ site:
     contact: 官方聯絡資訊區域
   navigation:
     about-frc: 關於 FRC
-    about-gh-frc: 關於 GHFRC
+    about-leomotive: 關於 LEOMOTIVE
     events: 活動
     robots: 機器人
     achievements: 賽事成果
@@ -57,15 +57,15 @@ site:
     contact: 聯絡我們
   hero:
     eyebrow: 示例隊伍官網
-    title: GHFRC
+    title: LEOMOTIVE
     introduction: 首頁介紹文字預留區
     mediaLabel: 首頁圖片或影片預留區
   events:
-    metaTitle: 活動 | GHFRC
-    metaDescription: 查看 GHFRC 的近期活動及歷史活動記錄。
-    eyebrow: GHFRC 活動
+    metaTitle: 活動 | LEOMOTIVE
+    metaDescription: 查看 LEOMOTIVE 的近期活動及歷史活動記錄。
+    eyebrow: LEOMOTIVE 活動
     title: 活動
-    introduction: 查看 GHFRC 的近期活動，並回顧已經結束的活動。
+    introduction: 查看 LEOMOTIVE 的近期活動，並回顧已經結束的活動。
     upcomingTitle: 近期活動
     pastTitle: 歷史活動
     upcomingLabel: 即將開始
@@ -77,5 +77,5 @@ site:
     venueLabel: 地點
     backLabel: 返回活動列表
   footer:
-    title: GHFRC
+    title: LEOMOTIVE
     placeholder: 頁腳資訊預留區

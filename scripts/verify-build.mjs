@@ -42,7 +42,7 @@ function countMatches(source, pattern) {
 }
 
 function toOutputPath(publicReference) {
-  const referenceUrl = new URL(publicReference, 'https://ghfrc.org/');
+  const referenceUrl = new URL(publicReference, 'https://leomotive.org/');
   const pathname = decodeURIComponent(referenceUrl.pathname);
 
   if (pathname === '/') {
@@ -65,7 +65,7 @@ async function assertVersionedFavicon(html, relativePath, scheme) {
   assert.ok(reference?.startsWith('/content/'), `${relativePath} must provide a content-supplied ${scheme} favicon.`);
   const contents = await readFile(toOutputPath(reference));
   const expectedRevision = `${createHash('sha256').update(contents).digest('hex').slice(0, 12)}-${scheme}`;
-  const actualRevision = new URL(reference, 'https://ghfrc.org/').searchParams.get('favicon');
+  const actualRevision = new URL(reference, 'https://leomotive.org/').searchParams.get('favicon');
 
   assert.equal(
     actualRevision,
@@ -108,7 +108,7 @@ async function readScriptClosure(initialReferences) {
     for (const match of source.matchAll(/(?:\bfrom\s*|\bimport\s*)["']([^"']+\.js)["']/gu)) {
       const dependency = new URL(
         match[1],
-        new URL(reference, 'https://ghfrc.org/'),
+        new URL(reference, 'https://leomotive.org/'),
       ).pathname;
 
       if (dependency.startsWith('/')) pending.push(dependency);
@@ -289,7 +289,7 @@ for (const route of automaticRoutes) {
   const relativePath = route ? `${route}/index.html` : 'index.html';
   const html = await readFile(join(distRoot, relativePath), 'utf8');
 
-  assert.match(html, /__ghfrc_auto_language/u, `${relativePath} must select a language.`);
+  assert.match(html, /__leomotive_auto_language/u, `${relativePath} must select a language.`);
   assert.doesNotMatch(html, /data-site-header/u, `${relativePath} must remain a redirect entry.`);
 }
 
@@ -300,7 +300,7 @@ for (const eventSlug of eventSlugs) {
   );
   assert.match(
     eventRedirectHtml,
-    /__ghfrc_auto_language/u,
+    /__leomotive_auto_language/u,
     `The ${eventSlug} entry must select a language.`,
   );
   assert.doesNotMatch(
@@ -310,7 +310,7 @@ for (const eventSlug of eventSlugs) {
   );
   assert.match(
     eventRedirectHtml,
-    /ghfrc-language/u,
+    /leomotive-language/u,
     `The ${eventSlug} entry must respect the stored language preference.`,
   );
   assert.match(

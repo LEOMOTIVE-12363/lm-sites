@@ -1,7 +1,7 @@
 site:
   language: zh-CN
-  title: GHFRC
-  description: GHFRC 队伍官方网站框架
+  title: LEOMOTIVE
+  description: LEOMOTIVE 队伍官方网站框架
   logo:
     src: /content/images/placeholder-logo.png
     alt: 示例队伍 Logo
@@ -49,7 +49,7 @@ site:
     contact: 官方联系信息区域
   navigation:
     about-frc: 关于 FRC
-    about-gh-frc: 关于 GHFRC
+    about-leomotive: 关于 LEOMOTIVE
     events: 活动
     robots: 机器人
     achievements: 赛事成果
@@ -58,13 +58,13 @@ site:
     contact: 联系我们
   hero:
     eyebrow: 示例队伍官网
-    title: GHFRC
+    title: LEOMOTIVE
     introduction: 首页介绍文字预留区
     mediaLabel: 首页图片或视频预留区
   events:
-    metaTitle: 活动 | GHFRC
+    metaTitle: 活动 | LEOMOTIVE
     metaDescription: 查看队伍近期活动及历史活动。
-    eyebrow: GHFRC 活动
+    eyebrow: LEOMOTIVE 活动
     title: 活动
     introduction: 查看队伍已经公开的近期活动与历史记录。
     upcomingTitle: 近期活动
@@ -78,5 +78,5 @@ site:
     venueLabel: 地点
     backLabel: 返回活动列表
   footer:
-    title: GHFRC
+    title: LEOMOTIVE
     placeholder: 页脚信息预留区
