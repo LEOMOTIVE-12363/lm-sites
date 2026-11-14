@@ -84,7 +84,7 @@ export const siteSchema = z.object({
   }),
   navigation: z.object({
     'about-frc': z.string().min(1),
-    'about-gh-frc': z.string().min(1),
+    'about-leomotive': z.string().min(1),
     robots: z.string().min(1),
     sponsors: z.string().min(1),
     contact: z.string().min(1),
@@ -106,7 +106,7 @@ export const siteSchema = z.object({
 export const pageSchema = z.object({
   navigationId: z.enum([
     'about-frc',
-    'about-gh-frc',
+    'about-leomotive',
     'robots',
     'achievements',
     'news',
