@@ -591,8 +591,14 @@ for (const outputFile of outputFiles) {
       /particle-skin-ui-reference|git-lfs\.github\.com\/spec/iu,
       `Internal reference text entered ${outputFile}.`,
     );
+    // Recruitment instructions may mention QR codes in visible text. Keep
+    // scanning markup, asset references, and expiry information unchanged.
+    const outputWithoutVisibleQrMentions = outputText.replace(
+      />[^<]*</gu,
+      (text) => text.replace(/二维码|二維碼|\bQR(?:[\s-]*code)?\b/giu, ''),
+    );
     assert.doesNotMatch(
-      outputText,
+      outputWithoutVisibleQrMentions,
       /(?:二维码|到期时间|有效期|valid[\s-]*until|\bQR(?:[\s-]*code)?\b|\bexpir(?:y|es)\b)/iu,
       `QR-code or expiry information entered ${outputFile}.`,
     );
