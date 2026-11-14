@@ -1,6 +1,6 @@
 # Example Content
 
-This folder contains public, replaceable example content for the website template. It does not contain GHFRC's private website media.
+This folder contains public, replaceable example content for the website template. It does not contain LEOMOTIVE's private website media.
 
 - `config/locales/zh-CN/site.yaml`: complete Simplified Chinese site metadata, navigation, accessibility labels, homepage hero copy, and interface text.
 - `config/locales/en/site.yaml`: independent English overrides for site-wide interface text.
@@ -20,7 +20,7 @@ Replace the files in this folder with one complete content set. Do not place pas
 
 # 示例内容
 
-本文件夹保存网站模板中公开且可替换的示例内容，不包含 GHFRC 官网的私有媒体。
+本文件夹保存网站模板中公开且可替换的示例内容，不包含 LEOMOTIVE 官网的私有媒体。
 
 - `config/locales/zh-CN/site.yaml`：完整的简体中文全站元数据、导航、无障碍标签、首页首屏文字和界面文字。
 - `config/locales/en/site.yaml`：独立的英文全站界面覆盖内容。
