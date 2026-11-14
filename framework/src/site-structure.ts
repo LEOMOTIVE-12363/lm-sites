@@ -1,7 +1,7 @@
 export const sitePagePlan = [
   { id: 'about-frc', contentId: 'frc', href: '/frc/', order: 1 },
   { id: 'about-xplore', contentId: 'xplore', href: '/xplore/', order: 2 },
-  { id: 'about-gh-frc', contentId: 'team', href: '/team/', order: 3 },
+  { id: 'about-leomotive', contentId: 'team', href: '/team/', order: 3 },
   { id: 'robots', contentId: 'robots', href: '/robots/', order: 4 },
   { id: 'achievements', contentId: 'achievements', href: '/achievements/', order: 5 },
   { id: 'news', contentId: 'news', href: '/news/', order: 6 },
