@@ -10,13 +10,13 @@ describe('home navigation', () => {
     const items = createHomeNavigationItems(
       [
         { id: 'about-frc' },
-        { id: 'about-gh-frc' },
+        { id: 'about-leomotive' },
         { id: 'robots' },
         { id: 'achievements' },
       ] as const,
       {
         'about-frc': '关于 FRC',
-        'about-gh-frc': '关于 GHFRC',
+        'about-leomotive': '关于 LEOMOTIVE',
         robots: '机器人',
         achievements: '赛事成果',
       },
@@ -29,8 +29,8 @@ describe('home navigation', () => {
         opensInNewTab: true,
       },
       {
-        href: '#about-gh-frc',
-        label: '关于 GHFRC',
+        href: '#about-leomotive',
+        label: '关于 LEOMOTIVE',
         opensInNewTab: false,
       },
       {

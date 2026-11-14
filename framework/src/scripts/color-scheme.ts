@@ -1,4 +1,4 @@
-export const COLOR_SCHEME_STORAGE_KEY = 'ghfrc-color-scheme';
+export const COLOR_SCHEME_STORAGE_KEY = 'leomotive-color-scheme';
 
 type ColorScheme = 'dark' | 'light';
 
