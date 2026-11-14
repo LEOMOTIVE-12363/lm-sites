@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ghfrc.org',
+  site: 'https://leomotive.org',
   output: 'static',
 });
