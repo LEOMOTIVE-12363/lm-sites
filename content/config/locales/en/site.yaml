@@ -29,9 +29,9 @@ site:
   navigation:
     events: Events
   events:
-    metaTitle: Events | GHFRC
+    metaTitle: Events | LEOMOTIVE
     metaDescription: View upcoming and past team events.
-    eyebrow: GHFRC Events
+    eyebrow: LEOMOTIVE Events
     title: Events
     introduction: Explore the team's published upcoming events and event archive.
     upcomingTitle: Upcoming Events

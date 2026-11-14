@@ -14,8 +14,8 @@ import {
 } from './content-schema';
 
 const projectRoot = fileURLToPath(new URL('../../', import.meta.url));
-const contentRoot = process.env.GH_FRC_CONTENT_DIR
-  ? resolve(projectRoot, process.env.GH_FRC_CONTENT_DIR)
+const contentRoot = process.env.LM_SITES_CONTENT_DIR
+  ? resolve(projectRoot, process.env.LM_SITES_CONTENT_DIR)
   : resolve(projectRoot, 'content');
 
 function contentUrl(...segments: string[]) {
